@@ -1,0 +1,9 @@
+@use "../global/mixins/media.scss";
+
+.header {
+  position: fixed;
+  z-index: 9999;
+  padding: 1rem;
+  min-height: 80px;
+  width: 100%;
+}

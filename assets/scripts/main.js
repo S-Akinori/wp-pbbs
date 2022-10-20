@@ -1,0 +1,1 @@
+(()=>{"use strict";($=jQuery)((function(){console.log("hello from home page")}))})();
