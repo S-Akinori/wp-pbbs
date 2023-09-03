@@ -18,7 +18,8 @@ module.exports = {
     path: `${__dirname}/assets`,
     // 出力ファイル名
     filename: "scripts/main.js",
-    assetModuleFilename: 'images/[name][ext]'
+    assetModuleFilename: 'images/[name][ext]',
+    publicPath: '../',
   },
   module: {
     rules: [

@@ -21,15 +21,18 @@
 <body>
   <header class="header">
     <div class="flex justify-between items-center">
-      <div class="c-logo"><a href="<?= home_url(); ?>">Logo</a></div>
-      <button class="js-menu-button flex items-center justify-center">
+      <div class="c-logo"><a href="<?= home_url(); ?>"><img src="<?= get_option('company_logo'); ?>" width="50" height="50" alt="<?= get_option('company_name'); ?>" /></a></div>
+      <div>
+        <a class="c-button" href="tel:<?= get_option('company_tel'); ?>">ご注文：<?= get_option('company_tel'); ?></a>
+      </div>
+      <!-- <button class="js-menu-button flex items-center justify-center">
         <span class="material-icons">
           menu
         </span>
-      </button>
+      </button> -->
     </div>
   </header>
-  <div id="jsNav" class="l-nav-container">
+  <!-- <div id="jsNav" class="l-nav-container">
     <button class="js-menu-button absolute right-16 top-16 flex items-center justify-center">
     <span class="material-icons text-gray-400">close</span>
     </button>
@@ -42,5 +45,5 @@
         <li><a href="">Link</a></li>
       </ul>
     </nav>
-  </div>
+  </div> -->
   <main>

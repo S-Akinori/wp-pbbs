@@ -1,0 +1,21 @@
+@use '../global/' as g;
+
+.c-imageText {
+  display: block;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  @include g.md {
+    display: flex;
+    margin-bottom: 0;
+  }
+}
+.c-imageText__wrapper {
+  // width: 50%;
+  @include g.md {
+    width: 50%;
+  }
+}
+.c-imageText__image img {
+  width: 100%;
+  object-fit: cover;
+}

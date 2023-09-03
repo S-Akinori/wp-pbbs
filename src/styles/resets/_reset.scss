@@ -1,14 +1,10 @@
 :root {
-  --base-background: #F6F6F6;
-  --base-color: #F6F6F6;
-  --base-text-color: #080D1B;
-  --base-cont: #080D1B;
-  --main-color: #fbe5e7;
-  --main-color-cont: #F6F6F6;
-  --lp-main-color: #F7F4E9;
-  --main-color-cont: #F6F6F6;
-  --accent-color: #A69463;
-  --accent-cont: #F6F6F6;
+  --base-color: #111111;
+  --base-cont: #ffffff;
+  --main-color: #adff2f;
+  --main-color-cont: #111111;
+  --accent-color: #D1432A;
+  --accent-cont: #ffffff;
   --max-width: 1280px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -16,7 +12,8 @@
   --breakpoint-xl: 1280px;
 }
 body {
-  color: var(--base-text-color);
+  color: var(--base-cont);
+  background: var(--base-color);
   line-height: 2;
   letter-spacing: 0.1em;
   overflow-x: hidden;
