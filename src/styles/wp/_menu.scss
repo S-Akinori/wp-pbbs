@@ -1,16 +1,16 @@
 @use '../global/' as g;
-.menu ul {
+.menu, .menu ul {
     display: flex;
     align-items: center;
     justify-content: end;
     flex-wrap: wrap;
 }
-.menu ul li {
+.menu li, .menu ul li {
     position: relative;
     margin: 0 1rem;
     font-size: 0.8rem;
 }
-.menu ul li::after {
+.menu li::after, .menu ul li::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -22,7 +22,7 @@
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
-.menu ul li:hover::after {
+.menu li:hover::after, .menu ul li:hover::after {
     transform: scaleX(1);
 }
 
