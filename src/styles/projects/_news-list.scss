@@ -1,0 +1,19 @@
+@use '../global/' as g;
+.p-news-list__item {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid g.$main_color;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    @include g.md {
+        max-width: 80%;
+    }
+}
+
+.p-news-list__item__date {
+    padding-right: 1rem;
+}
+.p-news-list__item__title {
+    padding-left: 1rem;
+}

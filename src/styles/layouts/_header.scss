@@ -1,11 +1,21 @@
 @use '../global/' as g;
 
 .header {
-  position: fixed;
-  z-index: 9999;
-  background: g.$base_color;
-  color: g.$base_color_cont;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // z-index: 9999;
+  background: g.$base_color_cont;
+  color: g.$base_color;
   padding: 1rem;
-  min-height: 80px;
   width: 100%;
+}
+.header__nav {
+  display: none;
+  @include g.md {
+    display: block;
+  }
 }

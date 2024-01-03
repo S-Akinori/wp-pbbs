@@ -1,0 +1,10 @@
+.c-fade-in {
+    opacity: 0;
+    transition: 500ms ease-in-out;
+    transform: translateY(30px);
+}
+
+.c-fade-in.active {
+    transform: translateY(0);
+    opacity: 1;
+}

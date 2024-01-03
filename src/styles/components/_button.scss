@@ -1,7 +1,12 @@
 @use '../global/' as g;
 .c-button {
-  padding: .5rem 1rem;
-  border-radius: 100vh;
+  display: inline-block;
+  padding: .5rem 1.5rem;
+  background: g.$main_color;
+  color: g.$main_color_cont;
+}
+
+.c-button--accent {
   background: g.$accent_color;
-  color: g.$base_color_cont;
+  color: g.$accent_color_cont;
 }

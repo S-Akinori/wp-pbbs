@@ -25,7 +25,7 @@ module.exports = {
     rules: [
       // Sassファイルの読み込みとコンパイル
       {
-        test: /\.scss/, // 対象となるファイルの拡張子
+        test: /\.(sass|scss|less|css)$/, // 対象となるファイルの拡張子
         use: [
           // CSSファイルを書き出すオプションを有効にする
           {

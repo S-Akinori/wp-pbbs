@@ -1,0 +1,9 @@
+.c-image--rounded {
+    aspect-ratio: 1/1;
+}
+.c-image--rounded img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}

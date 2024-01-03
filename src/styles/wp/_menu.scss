@@ -1,0 +1,47 @@
+@use '../global/' as g;
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+.menu ul li {
+    position: relative;
+    margin: 0 1rem;
+    font-size: 0.8rem;
+}
+.menu ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: g.$main_color;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.menu ul li:hover::after {
+    transform: scaleX(1);
+}
+
+.sp-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh;
+    background: g.$main_color;
+    color: g.$base_color_cont;
+    padding: 1rem;
+    transform: translateX(-100%);
+    transition: transform 300ms ease;
+}
+.sp-menu-container .menu ul {
+    display: block;
+}
+.sp-menu-container.active {
+    transform: translateX(0);
+}

@@ -8,3 +8,12 @@ add_theme_support('post-thumbnails');
 //   add_theme_support( 'title-tag' );
 // }
 // add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+function mytheme_setup() {
+    // ナビゲーションメニューをサポート
+    register_nav_menus(array(
+        'header' => 'ヘッダーメニュー',
+        'footer' => 'フッターメニュー'
+    ));
+}
+add_action('after_setup_theme', 'mytheme_setup');

@@ -1,3 +1,6 @@
+@use '../global/' as g;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
 :root {
   --base-color: #111111;
   --base-cont: #ffffff;
@@ -12,18 +15,17 @@
   --breakpoint-xl: 1280px;
 }
 body {
-  color: var(--base-cont);
-  background: var(--base-color);
+  color: g.$base_color;
+  background: g.$base_color_cont;
   line-height: 2;
   letter-spacing: 0.1em;
   overflow-x: hidden;
   max-width: 100%;
-  font-family: "Source Han Serif", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-family: 'Noto Sans JP', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 main {
-  padding-bottom: 3rem;
+  // padding-bottom: 3rem;
   min-height: 100vh;
-  padding-top: 4rem;
 }
 video {
   width: 100%;
@@ -38,7 +40,6 @@ h2 {
 h3 {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
 }
 .title-border-b {
   position: relative;
@@ -121,6 +122,10 @@ iframe {
 .d-sp {
   display: none;
 }
+.swiper img {
+  width: 100%;
+  height: 100%;
+}
 @media screen and (max-width: 768px) {
   html, body {
     font-size: 14px;
@@ -143,4 +148,8 @@ iframe {
   .d-sp {
     display: block;
   }
+}
+
+.icon {
+  cursor: pointer;
 }

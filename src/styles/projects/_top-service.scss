@@ -1,0 +1,6 @@
+@use '../global/' as g;
+.p-top-service__list__title {
+    font-weight: bold;
+    color: g.$main_color;
+    text-align: center;
+}

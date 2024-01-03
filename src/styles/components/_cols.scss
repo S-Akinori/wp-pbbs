@@ -1,0 +1,28 @@
+@use '../global/' as g;
+.c-cols {
+    @include g.md {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.c-cols__col {
+    margin-bottom: 2rem;
+    @include g.md {
+        margin-bottom: 0;
+    }
+}
+.c-cols__col--2 {
+    @include g.md {
+        width: 50%;
+    }
+}
+.c-cols__col--3 {
+    @include g.md {
+        width: 33.333%;
+    }
+}
+.c-cols__col--4 {
+    @include g.md {
+        width: 22%;
+    }
+}
