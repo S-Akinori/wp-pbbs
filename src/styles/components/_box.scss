@@ -1,0 +1,6 @@
+@use '../global/' as g;
+.c-box {
+    background: g.$base_color_cont;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}

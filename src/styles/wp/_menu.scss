@@ -8,7 +8,6 @@
 .menu li, .menu ul li {
     position: relative;
     margin: 0 1rem;
-    font-size: 0.8rem;
 }
 .menu li::after, .menu ul li::after {
     content: '';
@@ -33,14 +32,15 @@
     z-index: 9999;
     width: 100%;
     height: 100vh;
-    background: g.$main_color;
-    color: g.$base_color_cont;
+    background: g.$main_color_cont;
+    color: g.$main_color;
     padding: 1rem;
     transform: translateX(-100%);
     transition: transform 300ms ease;
 }
-.sp-menu-container .menu ul {
+.sp-menu-container .menu {
     display: block;
+    font-weight: bold;
 }
 .sp-menu-container.active {
     transform: translateX(0);

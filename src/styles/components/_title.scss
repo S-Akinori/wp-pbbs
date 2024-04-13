@@ -1,47 +1,7 @@
 @use "../global/" as g;
 .c-title {
-  position: relative;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: g.$main_color;
-  @include g.md {
-    font-size: 2.5rem;
-  }
-}
-.c-title--cont {
-  color: g.$main_color_cont;
-}
-
-.c-title--center {
   text-align: center;
-}
-.c-title__en {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: -2rem;
-  font-size: 5rem;
-  line-height: 1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba($color: g.$main_color, $alpha: 0.3);
-  @include g.md {
-    top: -4rem;
-    font-size: 12rem;
-  }
-}
-.c-title--center .c-title__en {
-  left: 50%;
-  transform: translateX(-50%);
-}
-.c-title--cont .c-title__en {
-  -webkit-text-stroke: 2px rgba($color: g.$main_color_cont, $alpha: 0.3);
-}
-.c-title--h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: g.$main_color;
+  margin-bottom: 1rem;
 }

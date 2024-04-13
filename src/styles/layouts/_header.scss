@@ -4,14 +4,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // z-index: 9999;
-  background: g.$base_color_cont;
-  color: g.$base_color;
-  padding: 1rem;
-  width: 100%;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  border-radius: 0.5rem;
+  background: g.$main_color_cont;
+  color: g.$main_color;
+  padding: .5rem;
+  width: 90%;
+  font-weight: bold;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  @include g.md {
+    width: 80%;
+  }
 }
 .header__nav {
   display: none;

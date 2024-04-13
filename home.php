@@ -15,216 +15,56 @@ $menus = get_posts($args);
 ?>
 <?php get_header(); ?>
 <div class="p-top-fv">
-  <div class="swiper p-top-fv__inner">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="<?= get_template_directory_uri(); ?>/assets/images/1.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="<?= get_template_directory_uri(); ?>/assets/images/2.png" alt=""></div>
-      <div class="swiper-slide"><img src="<?= get_template_directory_uri(); ?>/assets/images/3.png" alt=""></div>
-    </div>
-    <div class="swiper-pagination"></div>
+  <div class="p-top-fv__inner">
+    <img src="<?= get_template_directory_uri(); ?>/assets/images/bbf-text.png" alt="" />
   </div>
 </div>
 <section class="c-section">
-  <div class="c-cols">
-    <div class="c-cols__col c-cols__col--2">
-      <h2 class="c-title c-fade-in">
-        求職者様と企業様の<br />「声」をつなぐ
-        <span class="c-title__en">VOICE</span>
-      </h2>
-    </div>
-    <div class="c-cols__col c-cols__col--2">
-      <p>VOICEはご存じの通り、声という意味があります。</p>
-      <p>弊社ヴォイスキャリアコンサルティングは求職者様の夢や理想をもとに、計画と実行をサポートし、成功へとお導き致します。</p>
-      <p>求職者様と、企業様の声をしっかりと受け止め、新しいCAREERの実現をお手伝いをしています。</p>
-    </div>
-  </div>
+  <h2>ビールと楽しむ!音楽と笑いの祭典!</h2>
   <div class="text-center">
-    <a href="" class="c-button">コンセプトへ</a>
+    <p>音楽や笑いを中心に繰り広げられるフリーダムなフェス。</p>
+    <p>そんなフェスをビールを片手に楽しもう!</p>
+    <p>楽しみ方はひとそれぞれ。</p>
+    <p>思う存分に楽しいを追求できる新たなイベント。</p>
+  </div>
+  <div class="mt-16 p-top-movie">
+    <img src="<?= get_template_directory_uri(); ?>/assets/images/movie.png" alt="" class="mx-auto">
   </div>
 </section>
-<section class="c-section">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/prize2018.png" alt="" class="mx-auto">
-</section>
-<section class="c-section">
-  <h2 class="c-title c-fade-in">
-    当社が選ばれる理由
-    <span class="c-title__en">SERVICE</span>
-  </h2>
-  <div class="c-imageText">
-  </div>
-  <div class="c-imageText flex-row-reverse	">
-    <div class="c-cols">
-      <div class="c-cols__col c-cols__col--4">
-        <div class="c-image--rounded">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service1.jpg" alt="" />
-        </div>
-        <div>
-          <h3 class="p-top-service__list__title">豊富な求人</h3>
-          <p>1000社、3000案件以上の求人をご用意。</p>
-        </div>
-      </div>
-      <div class="c-cols__col c-cols__col--4">
-        <div class="c-image--rounded">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service2.jpg" alt="" />
-        </div>
-        <div>
-          <h3 class="p-top-service__list__title">細かいサポート</h3>
-          <p>面談を通して、希望の企業に入った先に、何をしたいのか、どんな将来を手に入れていたいのか、をお伺いした上でご提案いたします。</p>
-        </div>
-      </div>
-      <div class="c-cols__col c-cols__col--4">
-        <div class="c-image--rounded">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service3.jpg" alt="" />
-        </div>
-        <div>
-          <h3 class="p-top-service__list__title">情報収集</h3>
-          <p>企業様の雰囲気、残業時間の実態、給与パターンなど、直接聞きづらい内容もお伝えします。</p>
-        </div>
-      </div>
-      <div class="c-cols__col c-cols__col--4">
-        <div class="c-image--rounded">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service4.jpg" alt="" />
-        </div>
-        <div>
-          <h3 class="p-top-service__list__title">即日対応</h3>
-          <p>オンラインで即日対応するので急ぎでも安心です。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <a href="" class="c-button">サービスへ</a>
-  </div>
-</section>
-<section class="c-section">
-  <h2 class="c-title c-fade-in">
-    多くの方に感謝の「声」をいただいております
-    <span class="c-title__en">REVIEWS</span>
-  </h2>
-  <div class="c-talk">
-    <div class="c-talk__image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review1.png" alt="" />
-      今村さん
-    </div>
-    <div class="c-talk__text">
-      <h3 class="c-talk__text__title">『自分自身の市場価値を上げるための転職』</h3>
-      <p>私は、大学を卒業してから、就職活動をしていましたが、なかなか希望の会社に就職することができませんでした。</p>
-      <p>そんな時に、ヴォイスキャリアコンサルティングさんにお世話になり、今の会社に就職することができました。</p>
-      <p>ヴォイスキャリアコンサルティングさんは、私の希望を聞いてくれ、私の希望に合った会社を紹介してくれました。</p>
-      <p>ヴォイスキャリアコンサルティングさんには、本当に感謝しています。</p>
-    </div>
-  </div>
-  <div class="c-talk c-talk--reverse">
-    <div class="c-talk__image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review2.jpg" alt="" />
-      田端さん
-    </div>
-    <div class="c-talk__text">
-      <h3 class="c-talk__text__title">『家族との時間を作るため転職を決意！』</h3>
-      <p>オンラインでの面接練習&対策のサポートが印象的でした。アドバイスや面接通過した際のお声は本当に心の支えでした。</p>
-      <p>こうして転職できて何もかも今は楽しく過ごせています。本当に感謝してます。ありがとうございました。</p>
-    </div>
-  </div>
-  <div class="c-talk">
-    <div class="c-talk__image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/review3.jpg" alt="" />
-      五十嵐さん
-    </div>
-    <div class="c-talk__text">
-      <h3 class="c-talk__text__title">『脱・年功序列！やりがいを見つけるため転職を決意！』</h3>
-      <p>素敵な職場を紹介していただき、本当にありがとうございます！</p>
-      <p>新卒入社したものの半年で辞め、毎日不安や焦りを感じていましたが心から転職して良かったと思っています。ありがとうございます。</p>
-    </div>
-  </div>
-  <div class="text-center">
-    <a href="" class="c-button">お客様の声へ</a>
-  </div>
-</section>
-<section class="c-section">
-  <h2 class="c-title c-title--center">
-    お知らせ
-    <span class="c-title__en">NEWS</span>
-  </h2>
-  <div>
-    <ul class="p-news-list mb-4">
-      <li class="p-news-list__item">
-        <p class="p-news-list__item__date">2023.1.1</p>
-        <p class="p-news-list__item__title"><a href="">ホームページをリニューアルしました。</a></p>
-      </li>
-      <li class="p-news-list__item">
-        <p class="p-news-list__item__date">2023.1.1</p>
-        <p class="p-news-list__item__title"><a href="">ホームページをリニューアルしました。</a></p>
-      </li>
-      <li class="p-news-list__item">
-        <p class="p-news-list__item__date">2023.1.1</p>
-        <p class="p-news-list__item__title"><a href="">ホームページをリニューアルしました。</a></p>
-      </li>
-      <li class="p-news-list__item">
-        <p class="p-news-list__item__date">2023.1.1</p>
-        <p class="p-news-list__item__title"><a href="">ホームページをリニューアルしました。</a></p>
-      </li>
-    </ul>
-    <div class="text-center">
-      <a href="" class="c-button">ニュースへ</a>
-    </div>
-  </div>
-</section>
-<div class="c-banner">
-  <section class="c-section">
-    <div class="c-cols">
-      <div class="c-cols__col--3">
-        <div class="p-4">
-          <div class="mb-4">
-            <img src="<?= get_option('company_logo'); ?>" width="150" height="150" alt="<?= get_option('company_name'); ?>" />
-          </div>
-          <h3><?= get_option('company_name'); ?></h3>
-          <div>
-            <div>
-              <div>
-                <div class="flex mb-4 pb-2 text-sm">
-                  <div class="w-32 pr-4"><?= get_option('company_address_title'); ?></div>
-                  <div class="whitespace-pre-wrap"><a href="tel:<?= get_option('company_address'); ?>"><?= get_option('company_address'); ?></a></div>
-                </div>
-                <div class="flex mb-4 pb-2 text-sm">
-                  <div class="w-32 pr-4"><?= get_option('company_tel_title'); ?></div>
-                  <div class="whitespace-pre-wrap"><a href="tel:<?= get_option('company_tel'); ?>"><?= get_option('company_tel'); ?></a></div>
-                </div>
-                <div class="flex mb-4 pb-2 text-sm">
-                  <div class="w-32 pr-4"><?= get_option('company_hours_title'); ?></div>
-                  <div class="whitespace-pre-wrap"><?= get_option('company_hours'); ?></div>
-                </div>
-                <div class="flex mb-4 pb-2 text-sm">
-                  <div class="w-32 pr-4"><?= get_option('company_mail_title'); ?></div>
-                  <div class="whitespace-pre-wrap"><?= get_option('company_mail'); ?></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex">
-            <a href="" class="mx-4"><img src="<?= get_template_directory_uri();?>/assets/images/fb-white.png" width="20" height="20" alt=""></a>
-            <a href="" class="mx-4"><img src="<?= get_template_directory_uri();?>/assets/images/ig-white.png" width="20" height="20" alt=""></a>
-          </div>
-        </div>
-      </div>
-      <div class="c-cols__col--3 border-t md:border-t-0 md:border-l border-main-cont">
-        <div class="p-4">
-          <h3>一緒にお仕事をしたい方へ</h3>
-          <p>求職者様と企業様の架け橋になれる人を募集しております</p>
-          <div class="mt-4">
-            <a href="" class="c-button c-button--accent">採用情報</a>
-          </div>
-        </div>
-      </div>
-      <div class="c-cols__col--3 border-t md:border-t-0 md:border-l border-main-cont">
-        <div class="p-4">
-          <h3>エージェント様へ</h3>
-          <p>現在、人材営業職を募集しており、エージェント様からもご支援を頂いております。取引条件は一律でご対応頂いております。</p>
-          <div class="mt-4">
-            <a href="" class="c-button c-button--accent">エージェント様募集</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="c-section">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
+<section class="c-section container">
+  <div class="c-box">
+    <h2>What is PERFECT BEER?</h2>
+    <h2>「最高のビール体験で、人生をもっと豊かに」</h2>
+    <p>現場スタッフ、お客様、関わる全ての方の人生をもっと豊かにしたい。そんな想いで営業しているビールと唐揚げの専門店です。日本を代表するビールメーカーを作ることを目標に掲げ、まずは日本一のビール屋を作るため、全国フランチャイズの展開中です。</p>
+    <div class="mt-12">
+      <img src="<?= get_template_directory_uri(); ?>/assets/images/beer.png" alt="" class="mx-auto">
+    </div>
+    <div class="mt-12">
+      <h2>「PERFECT BEERの定義」</h2>
+      <p>パーフェクトビアとは、銘柄のことではなく株式会社PERFECT BEER独自で定義した4つの項目をクリアした樽生ビールのこと。</p>
+      <p>樽生ビールは同じ銘柄でのみ、サーバーの管理の仕方やグラスの洗浄など品質管理で大きな差が出ます。</p>
+      <p>その管理を完璧に行い最高の状態で提供される樽生ビールのことをパーフェクトビアと定義をつけました。</p>
+    </div>
+    <div class="mt-12 text-center">
+      <a href="/" class="flex justify-center items-center"><span>詳しくはこちら</span> <span class="material-symbols-outlined">arrow_outward</span></a>
+    </div>
+  </div>
+</section>
+<div class="c-section">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<section class="c-section container">
+  <div class="c-box">
+    <h2>COLUMN</h2>
+    <h2 class="text-left">世の中に彩りと感情に揺さぶりを</h2>
+    <p>をテーマに掲げイベント活動を行っています。</p>
+    <p>人生の中の今日という日にイベントを通して、私達が創るこの瞬間が皆様の人生に彩りを添えて、感情が揺さぶられる体験と思い出を提供できたらと考えています。</p>
+    <p>世の中には様々な人がいます。色々な生き方や在り方があるという多様性を認め合い、何歳になってもワクワクできるような場所や体験を作っていきたいと思っています。</p>
+    <p>そんな想いを乗せて、作られたのが今回のイベントです。</p>
+    <p>出演者や出店者はもちろん、お客様や地域の方々、運営や裏方もみんなが主役で、みんなが自由に楽しめるイベントにしたいと考えています。</p>
+  </div>
+</section>
 <?php get_footer(); ?>
