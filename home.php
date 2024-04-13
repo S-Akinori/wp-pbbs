@@ -19,7 +19,7 @@ $menus = get_posts($args);
     <img src="<?= get_template_directory_uri(); ?>/assets/images/bbf-text.png" alt="" />
   </div>
 </div>
-<section class="c-section">
+<section class="c-section container mx-auto">
   <h2>ビールと楽しむ!音楽と笑いの祭典!</h2>
   <div class="text-center">
     <p>音楽や笑いを中心に繰り広げられるフリーダムなフェス。</p>
@@ -31,10 +31,10 @@ $menus = get_posts($args);
     <img src="<?= get_template_directory_uri(); ?>/assets/images/movie.png" alt="" class="mx-auto">
   </div>
 </section>
-<div class="c-section">
+<div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
-<section class="c-section container">
+<section class="c-section container mx-auto">
   <div class="c-box">
     <h2>What is PERFECT BEER?</h2>
     <h2>「最高のビール体験で、人生をもっと豊かに」</h2>
@@ -56,7 +56,7 @@ $menus = get_posts($args);
 <div class="c-section">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
-<section class="c-section container">
+<section class="c-section container mx-auto">
   <div class="c-box">
     <h2>COLUMN</h2>
     <h2 class="text-left">世の中に彩りと感情に揺さぶりを</h2>
