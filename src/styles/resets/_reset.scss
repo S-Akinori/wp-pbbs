@@ -14,6 +14,9 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: g.$main_color;
   background: g.$accent_color;

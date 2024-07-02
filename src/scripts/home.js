@@ -36,4 +36,6 @@ $(function() {
   $('.js-menu-toggler').on('click', function() {
     $('.sp-menu-container').toggleClass('active');
   })
+
+  $('.sp-menu-container .menu a').addClass('js-scroll-trigger');
 })

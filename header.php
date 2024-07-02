@@ -49,8 +49,8 @@
       ?>
     </nav>
     <div class="flex ml-4 mt-4 mb-4 md:mb-0">
-      <a href="" class="mr-4"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig.png" width="30" height="40" alt=""></a>
-      <a href="" class="mr-4"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x.png" width="30" height="40" alt=""></a>
+      <a href="https://www.instagram.com/perfectbeer_rockfes/" target="_blank" class="mr-4"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig.png" width="30" height="40" alt=""></a>
+      <a href="https://x.com/i/flow/login?redirect_after_login=%2Fperfectbeerrock" target="_blank" class="mr-4"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x.png" width="30" height="40" alt=""></a>
     </div>
   </div>
   <main>
