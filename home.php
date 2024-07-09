@@ -54,7 +54,7 @@ $menus = get_posts($args);
           <div class="p-lineup-list__item">
             <div class="c-card">
               <div class="c-card__image">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/artist.png" alt="" />
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt="" />
               </div>
               <div class="c-card__body">
                 <p class="font-bold">TOTALFAT</p>
@@ -82,24 +82,24 @@ $menus = get_posts($args);
       <button class="text-accent">8/12(MON)</button>
     </div>
     <div class="mt-4">
-        <div class="p-time-table">
-          <div class="p-time-table__list">
-            <div class="bg-[#F4BE74] p-4 text-center rounded-tl-lg rounded-tr-lg">MAIN STAGE</div>
-            <?php for ($i = 0; $i < 8; $i++) : ?>
-              <div class="p-time-table__list__item">
-                  <p class="font-bold">1<?=$i+1;?>:00</p>
-              </div>
-            <?php endfor; ?>
-          </div>
-          <div class="p-time-table__list">
-            <div class="bg-accent p-4 text-center rounded-tl-lg rounded-tr-lg">DJ booth</div>
-            <?php for ($i = 0; $i < 8; $i++) : ?>
-              <div class="p-time-table__list__item">
-                  <p class="font-bold">1<?=$i+1;?>:00</p>
-              </div>
-            <?php endfor; ?>
-          </div>
+      <div class="p-time-table">
+        <div class="p-time-table__list">
+          <div class="bg-[#F4BE74] p-4 text-center rounded-tl-lg rounded-tr-lg">MAIN STAGE</div>
+          <?php for ($i = 0; $i < 8; $i++) : ?>
+            <div class="p-time-table__list__item">
+              <p class="font-bold">1<?= $i + 1; ?>:00</p>
+            </div>
+          <?php endfor; ?>
         </div>
+        <div class="p-time-table__list">
+          <div class="bg-accent p-4 text-center rounded-tl-lg rounded-tr-lg">DJ booth</div>
+          <?php for ($i = 0; $i < 8; $i++) : ?>
+            <div class="p-time-table__list__item">
+              <p class="font-bold">1<?= $i + 1; ?>:00</p>
+            </div>
+          <?php endfor; ?>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -137,27 +137,27 @@ $menus = get_posts($args);
       <button class="text-accent">8/12(MON)</button>
     </div>
     <div class="mt-4">
-        <div class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center">
-          <?php for ($i = 0; $i < 5; $i++) : ?>
-            <div class="p-2 md:p-4 w-1/2 md:w-1/3">
-              <div class="c-card">
-                <div class="c-card__image">
-                  <img src="<?= get_template_directory_uri(); ?>/assets/images/shop.png" alt="" />
-                </div>
-                <div class="c-card__body">
-                  <p class="text-center font-bold">TORUKO Style</p>
-                  <div class="flex justify-center">
-                    <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                    <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
-                  </div>
+      <div class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center">
+        <?php for ($i = 0; $i < 5; $i++) : ?>
+          <div class="p-2 md:p-4 w-1/2 md:w-1/3">
+            <div class="c-card">
+              <div class="c-card__image">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt="" />
+              </div>
+              <div class="c-card__body">
+                <p class="text-center font-bold">TORUKO Style</p>
+                <div class="flex justify-center">
+                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                 </div>
               </div>
             </div>
-          <?php endfor; ?>
-        </div>
-        <div class="text-center font-bold tesxt-xl mt-4">
-          <a href="">and more...</a>
-        </div>
+          </div>
+        <?php endfor; ?>
+      </div>
+      <div class="text-center font-bold tesxt-xl mt-4">
+        <a href="">and more...</a>
+      </div>
     </div>
   </div>
 </section>
@@ -184,9 +184,10 @@ $menus = get_posts($args);
   <div class="c-box">
     <h2>NEWS</h2>
     <ul class="list-disc list-inside">
-      <li >ニュース1</li>
-      <li >ニュース2</li>
-      <li >ニュース3</li>
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <!-- ループ処理(例) -->
+          <li><a href="<?php the_permalink() ?>"><?php the_date(); ?> <?php the_title(); ?></a></li>
+      <?php endwhile; endif; ?>
     </ul>
   </div>
 </section>
