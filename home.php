@@ -199,9 +199,9 @@ $menus = get_posts($args);
     <h2>SPONSOR</h2>
     <div class="c-box bg-main-sub">
       <div class="flex justify-center">
-        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo-kirin.png" alt=""></a>
-        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo-asahi.png" alt=""></a>
-        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo-sapporo.png" alt=""></a>
+        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
+        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
+        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
       </div>
     </div>
   </div>
