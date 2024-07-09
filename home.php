@@ -54,7 +54,7 @@ $menus = get_posts($args);
           <div class="p-lineup-list__item">
             <div class="c-card">
               <div class="c-card__image">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt="" />
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.png" alt="" />
               </div>
               <div class="c-card__body">
                 <p class="font-bold">TOTALFAT</p>
@@ -142,7 +142,7 @@ $menus = get_posts($args);
           <div class="p-2 md:p-4 w-1/2 md:w-1/3">
             <div class="c-card">
               <div class="c-card__image">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt="" />
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.png" alt="" />
               </div>
               <div class="c-card__body">
                 <p class="text-center font-bold">TORUKO Style</p>
@@ -199,9 +199,9 @@ $menus = get_posts($args);
     <h2>SPONSOR</h2>
     <div class="c-box bg-main-sub">
       <div class="flex justify-center">
-        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
-        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
-        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/comming-soon.png" alt=""></a>
+        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.png" alt=""></a>
+        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.png" alt=""></a>
+        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.png" alt=""></a>
       </div>
     </div>
   </div>
