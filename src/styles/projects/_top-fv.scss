@@ -1,7 +1,7 @@
 @use '../global/' as g;
 .p-top-fv {
     position: relative;
-    background: url('images/top.jpg') no-repeat top center / contain;
+    background: url('images/top.jpg') no-repeat top center / cover;
     height: 100vh;
     @include g.md {
         height: 1380px;
