@@ -16,7 +16,7 @@ $menus = get_posts($args);
 <?php get_header(); ?>
 <div class="p-top-fv">
   <div class="p-top-fv__inner">
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/bbf-text.png" alt="" />
+    <!-- <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="" /> -->
   </div>
 </div>
 <div class="c-section container mx-auto">
