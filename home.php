@@ -217,4 +217,28 @@ $menus = get_posts($args);
     <p>出演者や出店者はもちろん、お客様や地域の方々、運営や裏方もみんなが主役で、みんなが自由に楽しめるイベントにしたいと考えています。</p>
   </div>
 </section>
+<section class="c-section container mx-auto">
+  <div class="c-box">
+    <div class="mb-4">
+      <a href="https://docs.google.com/forms/d/1WZnq9EIO9NPwONTLuK4ZJrndIq5Tu0aYxy33jchiaOs/edit">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply1.png" alt="">
+      </a>
+    </div>
+    <div class="mb-4">
+      <a  href="https://docs.google.com/forms/d/1sTGOO63AK5rjUOvR4IMp9cqHxjITmE-RPW-3KonduIs/edit">
+      <img src="<?= get_template_directory_uri(); ?>/assets/images/apply2.png" alt="">
+      </a>
+    </div>
+    <div class="mb-4">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSceqtyBzgT74TOxOTvL9QCsUIAy-4zGBsZDTkiS6Kr5jP2NYQ/viewform">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply3.png" alt="">
+      </a>
+    </div>
+    <div class="mb-4">
+      <a href="https://docs.google.com/forms/d/15XPiChsItqQGwdbcAWBMPTbVb5GG423Kknc4N3f6ba4/edit">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply4.png" alt="">
+      </a>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>
