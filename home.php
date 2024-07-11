@@ -2,6 +2,8 @@
 $args = array(
   'post_type' => 'lineup', // カスタム投稿タイプの名前
   'posts_per_page' => -1, // すべての投稿を表示する場合
+  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
+  'order'          => 'ASC', // 昇順に並べ替えます。
   'tax_query' => array(
     array(
       'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
@@ -16,6 +18,8 @@ $lineups1 = get_posts($args);
 $args = array(
   'post_type' => 'lineup', // カスタム投稿タイプの名前
   'posts_per_page' => -1, // すべての投稿を表示する場合
+  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
+  'order'          => 'ASC', // 昇順に並べ替えます。
   'tax_query' => array(
     array(
       'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
@@ -30,6 +34,8 @@ $lineups2 = get_posts($args);
 $args = array(
   'post_type' => 'lineup', // カスタム投稿タイプの名前
   'posts_per_page' => -1, // すべての投稿を表示する場合
+  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
+  'order'          => 'ASC', // 昇順に並べ替えます。
   'tax_query' => array(
     array(
       'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
@@ -140,7 +146,7 @@ $lineups3 = get_posts($args);
         <div class="p-lineup-list">
           <div class="p-lineup-list__col">
             <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
-              <div class="">
+              <div class="mb-4">
                 <div class="c-card">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
@@ -233,6 +239,9 @@ $lineups3 = get_posts($args);
 <div class="c-section c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
+</div>
 <section id="shop" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>SHOP</h2>
@@ -266,12 +275,6 @@ $lineups3 = get_posts($args);
     </div>
   </div>
 </section>
-<div class="c-section c-fade-in">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
-<div class="c-section c-fade-in">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
-</div>
 <section id="areaMap" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>AREA MAP</h2>
@@ -285,6 +288,11 @@ $lineups3 = get_posts($args);
   <div class="c-box">
     <h2>ACCESS</h2>
     <img src="<?= get_template_directory_uri(); ?>/assets/images/access.jpg" alt="" class="mx-auto">
+    <div>
+      <p class="text-lg">千葉市蘇我スポーツ公園</p>
+      <p>〒260-0835 千葉市中央区川崎町1-20</p>
+      <iframe class="w-full" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6490.342141493339!2d140.1229314!3d35.5741692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60229b0b9c50b1c9%3A0xdcf05836c92a2aad!2sSoga%20Sports%20Park!5e0!3m2!1sen!2sjp!4v1720687153826!5m2!1sen!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
 </section>
 <section id="news" class="c-section container mx-auto c-fade-in">
