@@ -1,46 +1,72 @@
 <?php
 $args = array(
-  'post_type' => 'menus', // カスタム投稿タイプの名前
+  'post_type' => 'lineup', // カスタム投稿タイプの名前
   'posts_per_page' => -1, // すべての投稿を表示する場合
   'tax_query' => array(
     array(
-      'taxonomy' => 'menus-cat', // カスタムタクソノミーの名前
+      'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
       'field'    => 'slug',
-      'terms'    => 'sushi-roulette', // タームのスラッグ
+      'terms'    => '8-10', // タームのスラッグ
     ),
   ),
 );
 
-$menus = get_posts($args);
+$lineups1 = get_posts($args);
+
+$args = array(
+  'post_type' => 'lineup', // カスタム投稿タイプの名前
+  'posts_per_page' => -1, // すべての投稿を表示する場合
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
+      'field'    => 'slug',
+      'terms'    => '8-11', // タームのスラッグ
+    ),
+  ),
+);
+
+$lineups2 = get_posts($args);
+
+$args = array(
+  'post_type' => 'lineup', // カスタム投稿タイプの名前
+  'posts_per_page' => -1, // すべての投稿を表示する場合
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
+      'field'    => 'slug',
+      'terms'    => '8-12', // タームのスラッグ
+    ),
+  ),
+);
+
+$lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
-<div class="p-top-fv">
-  <div class="p-top-fv__inner">
-    <!-- <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="" /> -->
-  </div>
+<div>
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="mx-auto" />
+</div>
+<div>
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
 </div>
 <div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bird.png" alt="" class="mx-auto">
 </div>
-<section id="about" class="c-section container mx-auto">
-  <h2>ビールと楽しむ!音楽と笑いの祭典!</h2>
+<section id="about" class="c-section container mx-auto c-fade-in">
+  <h2>日本一を目指す！ビールと音楽の祭典</h2>
   <div class="text-center">
-    <p>音楽や笑いを中心に繰り広げられるフリーダムなフェス。</p>
-    <p>そんなフェスをビールを片手に楽しもう!</p>
-    <p>楽しみ方はひとそれぞれ。</p>
-    <p>思う存分に楽しいを追求できる新たなイベント。</p>
-  </div>
-  <div class="mt-12">
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/filler-bears.png" alt="" class="mx-auto">
+    <p>ビールと音楽を中心に繰り広げられるフリーダムなフェス。</p>
+    <p>野外フェスでは味わったことのないキンキンで最高品質のビールを提供！</p>
+    <p>そんなビールを片手にフェスを楽しもう！楽しみ方はひとそれぞれ。</p>
+    <p>たくさんの乾杯を交わしみんなが主役でみんなで楽しいを追求できる新たなイベント</p>
   </div>
   <div class="mt-16 p-top-movie">
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/movie.png" alt="" class="mx-auto">
+    <iframe src="https://www.youtube.com/embed/CVYSz_H4L9k?si=lW1XzoM2xQ-VcOKA" frameborder="0"></iframe>
   </div>
 </section>
-<div class="c-section container mx-auto">
+<div class="c-section container mx-auto c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
-<section id="lineup" class="c-section container mx-auto">
+<section id="lineup" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>LINE UP</h2>
     <div class="flex items-center justify-around">
@@ -50,30 +76,68 @@ $menus = get_posts($args);
     </div>
     <div class="mt-4">
       <div class="p-lineup-list">
-        <?php for ($i = 0; $i < 8; $i++) : ?>
-          <div class="p-lineup-list__item">
-            <div class="c-card">
-              <div class="c-card__image">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt="" />
-              </div>
-              <div class="c-card__body">
-                <p class="font-bold">TOTALFAT</p>
-                <div class="flex justify-end">
-                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+        <div class="p-lineup-list__col">
+          <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+            <div class="">
+              <div class="c-card">
+                <div class="c-card__image">
+                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                </div>
+                <div class="c-card__body">
+                  <p class="font-bold"><?php the_title();?></p>
+                  <div class="flex justify-end">
+                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <?php endfor; ?>
+          <?php endforeach; wp_reset_postdata(); ?>
+        </div>
+        <div class="p-lineup-list__col">
+          <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
+            <div class="mb-4">
+              <div class="c-card">
+                <div class="c-card__image">
+                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                </div>
+                <div class="c-card__body">
+                  <p class="font-bold"><?php the_title();?></p>
+                  <div class="flex justify-end">
+                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; wp_reset_postdata(); ?>
+        </div>
+        <div class="p-lineup-list__col">
+          <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
+            <div class="">
+              <div class="c-card">
+                <div class="c-card__image">
+                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                </div>
+                <div class="c-card__body">
+                  <p class="font-bold"><?php the_title();?></p>
+                  <div class="flex justify-end">
+                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; wp_reset_postdata(); ?>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<div class="c-section container mx-auto">
+<div class="c-section container mx-auto c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/filler-bear.png" alt="" class="mx-auto">
 </div>
-<section id="timeTable" class="c-section container mx-auto">
+<section id="timeTable" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>TIME TABLE</h2>
     <div class="flex items-center justify-around">
@@ -103,10 +167,90 @@ $menus = get_posts($args);
     </div>
   </div>
 </section>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<section id="shop" class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>SHOP</h2>
+    <div class="flex items-center justify-around">
+      <button class="text-accent">8/10(SAT)</button>
+      <button class="text-accent">8/11(SUN)</button>
+      <button class="text-accent">8/12(MON)</button>
+    </div>
+    <div class="mt-4">
+      <div class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center">
+        <?php for ($i = 0; $i < 5; $i++) : ?>
+          <div class="p-2 md:p-4 w-1/2 md:w-1/3">
+            <div class="c-card">
+              <div class="c-card__image">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt="" />
+              </div>
+              <div class="c-card__body">
+                <!-- <p class="text-center font-bold">TORUKO Style</p> -->
+                <div class="flex justify-center">
+                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php endfor; ?>
+      </div>
+      <div class="text-center font-bold tesxt-xl mt-4">
+        <a href="">and more...</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<section id="areaMap" class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>AREA MAP</h2>
+    <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" width="200" alt="" class="mx-auto">
+  </div>
+</section>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<section id="access" class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>ACCESS</h2>
+    <img src="<?= get_template_directory_uri(); ?>/assets/images/access.jpg" alt="" class="mx-auto">
+  </div>
+</section>
+<section id="news" class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>NEWS</h2>
+    <ul class="list-disc list-inside">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <!-- ループ処理(例) -->
+          <li><a href="<?php the_permalink() ?>"><?php the_date(); ?> <?php the_title(); ?></a></li>
+      <?php endwhile; endif; ?>
+    </ul>
+  </div>
+</section>
 <div class="c-section">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
-<section class="c-section container mx-auto">
+<section class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>SPONSOR</h2>
+    <div class="c-box bg-main-sub">
+      <div class="flex justify-center">
+        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>What is PERFECT BEER?</h2>
     <h2>「最高のビール体験で、人生をもっと豊かに」</h2>
@@ -125,88 +269,7 @@ $menus = get_posts($args);
     </div>
   </div>
 </section>
-<div class="c-section">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
-<section id="shop" class="c-section container mx-auto">
-  <div class="c-box">
-    <h2>SHOP</h2>
-    <div class="flex items-center justify-around">
-      <button class="text-accent">8/10(SAT)</button>
-      <button class="text-accent">8/11(SUN)</button>
-      <button class="text-accent">8/12(MON)</button>
-    </div>
-    <div class="mt-4">
-      <div class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center">
-        <?php for ($i = 0; $i < 5; $i++) : ?>
-          <div class="p-2 md:p-4 w-1/2 md:w-1/3">
-            <div class="c-card">
-              <div class="c-card__image">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt="" />
-              </div>
-              <div class="c-card__body">
-                <p class="text-center font-bold">TORUKO Style</p>
-                <div class="flex justify-center">
-                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                  <a href="" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php endfor; ?>
-      </div>
-      <div class="text-center font-bold tesxt-xl mt-4">
-        <a href="">and more...</a>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="c-section">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
-<section id="areaMap" class="c-section container mx-auto">
-  <div class="c-box">
-    <h2>AREA MAP</h2>
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/map.png" alt="" class="mx-auto">
-  </div>
-</section>
-<div class="c-section">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
-<section id="access" class="c-section container mx-auto">
-  <div class="c-box">
-    <h2>ACCESS</h2>
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/access-train.png" alt="" class="mx-auto">
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/access-car.png" alt="" class="mx-auto">
-  </div>
-</section>
-<section id="news" class="c-section container mx-auto">
-  <div class="c-box">
-    <h2>NEWS</h2>
-    <ul class="list-disc list-inside">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <!-- ループ処理(例) -->
-          <li><a href="<?php the_permalink() ?>"><?php the_date(); ?> <?php the_title(); ?></a></li>
-      <?php endwhile; endif; ?>
-    </ul>
-  </div>
-</section>
-<div class="c-section">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
-<section class="c-section container mx-auto">
-  <div class="c-box">
-    <h2>SPONSOR</h2>
-    <div class="c-box bg-main-sub">
-      <div class="flex justify-center">
-        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="c-section container mx-auto">
+<section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>COLUMN</h2>
     <h2 class="text-left">世の中に彩りと感情に揺さぶりを</h2>
@@ -217,7 +280,7 @@ $menus = get_posts($args);
     <p>出演者や出店者はもちろん、お客様や地域の方々、運営や裏方もみんなが主役で、みんなが自由に楽しめるイベントにしたいと考えています。</p>
   </div>
 </section>
-<section class="c-section container mx-auto">
+<section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <div class="mb-4">
       <a href="https://docs.google.com/forms/d/1WZnq9EIO9NPwONTLuK4ZJrndIq5Tu0aYxy33jchiaOs/edit">

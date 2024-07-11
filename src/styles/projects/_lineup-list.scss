@@ -8,7 +8,7 @@
         background: linear-gradient(to right, #7fcef4 33.33%, #c5ecff 33.33%, #c5ecff 66.66%, #7fcef4 66.66%);
     }
 }
-.p-lineup-list__item {
+.p-lineup-list__col {
     padding: .5rem;
     width: calc(100% / 2);
     @include g.md {
@@ -16,6 +16,14 @@
         width: calc(100% / 3);
     }
 }
+// .p-lineup-list__item {
+//     padding: .5rem;
+//     width: calc(100% / 2);
+//     @include g.md {
+//         padding: 1rem;
+//         width: calc(100% / 3);
+//     }
+// }
 .p-lineup-list__item__content {
     border-radius: .5rem;
     background: #FCFCFC;
