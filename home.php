@@ -42,7 +42,7 @@ $args = array(
 $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
-<div>
+<div class="mt-16">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="mx-auto" />
 </div>
 <div>
@@ -70,65 +70,131 @@ $lineups3 = get_posts($args);
   <div class="c-box">
     <h2>LINE UP</h2>
     <div class="flex items-center justify-around">
-      <button class="text-accent">8/10(SAT)</button>
-      <button class="text-accent">8/11(SUN)</button>
-      <button class="text-accent">8/12(MON)</button>
+      <button id="lineup0810Button" class="text-accent js-lineup-toggler">8/10(SAT)</button>
+      <button id="lineup0811Button" class="text-accent js-lineup-toggler">8/11(SUN)</button>
+      <button id="lineup0812Button" class="text-accent js-lineup-toggler">8/12(MON)</button>
     </div>
     <div class="mt-4">
-      <div class="p-lineup-list">
-        <div class="p-lineup-list__col">
-          <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
-            <div class="">
-              <div class="c-card">
-                <div class="c-card__image">
-                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
-                </div>
-                <div class="c-card__body">
-                  <p class="font-bold"><?php the_title();?></p>
-                  <div class="flex justify-end">
-                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+      <div class="md:hidden">
+        <div class="p-lineup-list">
+          <div id="lineup0810" class="js-lineup-target">
+            <div class="flex flex-wrap">
+              <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+                  <div class="p-lineup-list__item">
+                    <div class="c-card">
+                      <div class="c-card__image">
+                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                      </div>
+                      <div class="c-card__body">
+                        <p class="font-bold"><?php the_title();?></p>
+                        <div class="flex justify-end">
+                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                <?php endforeach; wp_reset_postdata(); ?>
             </div>
-          <?php endforeach; wp_reset_postdata(); ?>
+          </div>
+          <div id="lineup0811" class="js-lineup-target hidden">
+            <div class="flex flex-wrap">
+              <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
+                  <div class="p-lineup-list__item">
+                    <div class="c-card">
+                      <div class="c-card__image">
+                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                      </div>
+                      <div class="c-card__body">
+                        <p class="font-bold"><?php the_title();?></p>
+                        <div class="flex justify-end">
+                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+          </div>
+          <div id="lineup0812" class="js-lineup-target hidden">
+            <div class="flex flex-wrap">
+              <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
+                  <div class="p-lineup-list__item">
+                    <div class="c-card">
+                      <div class="c-card__image">
+                        <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                      </div>
+                      <div class="c-card__body">
+                        <p class="font-bold"><?php the_title();?></p>
+                        <div class="flex justify-end">
+                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+          </div>
         </div>
-        <div class="p-lineup-list__col">
-          <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
-            <div class="mb-4">
-              <div class="c-card">
-                <div class="c-card__image">
-                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
-                </div>
-                <div class="c-card__body">
-                  <p class="font-bold"><?php the_title();?></p>
-                  <div class="flex justify-end">
-                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+      </div>
+      <div class="hidden md:block">
+        <div class="p-lineup-list">
+          <div class="p-lineup-list__col">
+            <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+              <div class="">
+                <div class="c-card">
+                  <div class="c-card__image">
+                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                  </div>
+                  <div class="c-card__body">
+                    <p class="font-bold"><?php the_title();?></p>
+                    <div class="flex justify-end">
+                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <?php endforeach; wp_reset_postdata(); ?>
-        </div>
-        <div class="p-lineup-list__col">
-          <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
-            <div class="">
-              <div class="c-card">
-                <div class="c-card__image">
-                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
-                </div>
-                <div class="c-card__body">
-                  <p class="font-bold"><?php the_title();?></p>
-                  <div class="flex justify-end">
-                    <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                    <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+            <?php endforeach; wp_reset_postdata(); ?>
+          </div>
+          <div class="p-lineup-list__col">
+            <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
+              <div class="mb-4">
+                <div class="c-card">
+                  <div class="c-card__image">
+                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                  </div>
+                  <div class="c-card__body">
+                    <p class="font-bold"><?php the_title();?></p>
+                    <div class="flex justify-end">
+                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <?php endforeach; wp_reset_postdata(); ?>
+            <?php endforeach; wp_reset_postdata(); ?>
+          </div>
+          <div class="p-lineup-list__col">
+            <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
+              <div class="">
+                <div class="c-card">
+                  <div class="c-card__image">
+                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                  </div>
+                  <div class="c-card__body">
+                    <p class="font-bold"><?php the_title();?></p>
+                    <div class="flex justify-end">
+                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; wp_reset_postdata(); ?>
+          </div>
         </div>
       </div>
     </div>

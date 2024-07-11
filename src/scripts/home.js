@@ -38,4 +38,12 @@ $(function() {
   })
 
   $('.sp-menu-container .menu a').addClass('js-scroll-trigger');
+
+  $('.js-lineup-toggler').on('click', function() {
+    const id = $(this).data('id');
+    const targetId = $(this).attr('id').replace('Button', '');
+    $()
+    $('.js-lineup-target').hide();
+    $(`#${targetId}`).fadeIn();
+  })
 })
