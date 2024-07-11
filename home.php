@@ -236,9 +236,6 @@ $lineups3 = get_posts($args);
 <div class="c-section c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
-<div class="c-section c-fade-in">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
-</div>
 <section id="shop" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2>SHOP</h2>
