@@ -42,7 +42,7 @@ $args = array(
 $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
-<div class="mt-16">
+<div class="mt-24">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="mx-auto" />
 </div>
 <div class="c-section container mx-auto">

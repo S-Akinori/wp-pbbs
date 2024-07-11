@@ -39,6 +39,10 @@ $(function() {
 
   $('.sp-menu-container .menu a').addClass('js-scroll-trigger');
 
+  $('.js-scroll-trigger').on('click', function() {
+    $('.sp-menu-container').toggleClass('active');
+  })    
+
   $('.js-lineup-toggler').on('click', function() {
     const id = $(this).data('id');
     const targetId = $(this).attr('id').replace('Button', '');
