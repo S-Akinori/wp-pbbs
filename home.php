@@ -303,18 +303,6 @@ $lineups3 = get_posts($args);
 </div>
 <section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>SPONSOR</h2>
-    <div class="c-box bg-main-sub">
-      <div class="flex justify-center">
-        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="c-section container mx-auto c-fade-in">
-  <div class="c-box">
     <h2>What is PERFECT BEER?</h2>
     <h2>「最高のビール体験で、人生をもっと豊かに」</h2>
     <p>現場スタッフ、お客様、関わる全ての方の人生をもっと豊かにしたい。そんな想いで営業しているビールと唐揚げの専門店です。日本を代表するビールメーカーを作ることを目標に掲げ、まずは日本一のビール屋を作るため、全国フランチャイズの展開中です。</p>
@@ -364,6 +352,18 @@ $lineups3 = get_posts($args);
       <a href="https://docs.google.com/forms/d/15XPiChsItqQGwdbcAWBMPTbVb5GG423Kknc4N3f6ba4/edit">
         <img src="<?= get_template_directory_uri(); ?>/assets/images/apply4.png" alt="">
       </a>
+    </div>
+  </div>
+</section>
+<section class="c-section container mx-auto c-fade-in">
+  <div class="c-box">
+    <h2>SPONSOR</h2>
+    <div class="c-box bg-main-sub">
+      <div class="flex justify-center">
+        <a href="https://www.kirinholdings.com/jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+        <a href="https://www.asahibeer.co.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+        <a href="https://www.sapporobeer.jp/" target="_blank" class="mx-auto"><img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" alt=""></a>
+      </div>
     </div>
   </div>
 </section>
