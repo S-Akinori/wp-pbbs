@@ -45,9 +45,6 @@ $lineups3 = get_posts($args);
 <div class="mt-16">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="mx-auto" />
 </div>
-<div>
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
-</div>
 <div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bird.png" alt="" class="mx-auto">
 </div>
@@ -271,6 +268,9 @@ $lineups3 = get_posts($args);
 </section>
 <div class="c-section c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
+</div>
+<div class="c-section c-fade-in">
+  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
 </div>
 <section id="areaMap" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
