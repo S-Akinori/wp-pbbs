@@ -49,21 +49,16 @@ $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
 <div class="mt-24">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/top.jpg" alt="mx-auto" />
+  <img src="<?= get_option('top_image');?>" alt="mx-auto" />
 </div>
 <div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bird.png" alt="" class="mx-auto">
 </div>
 <section id="about" class="c-section container mx-auto c-fade-in">
-  <h2>日本一を目指す！ビールと音楽の祭典</h2>
-  <div class="text-center">
-    <p>ビールと音楽を中心に繰り広げられるフリーダムなフェス。</p>
-    <p>野外フェスでは味わったことのないキンキンで最高品質のビールを提供！</p>
-    <p>そんなビールを片手にフェスを楽しもう！楽しみ方はひとそれぞれ。</p>
-    <p>たくさんの乾杯を交わしみんなが主役でみんなで楽しいを追求できる新たなイベント</p>
-  </div>
+  <h2><?= get_option('top_title'); ?></h2>
+  <div class="text-center"><?= get_option('top_text'); ?></div>
   <div class="mt-16 p-top-movie">
-    <iframe src="https://www.youtube.com/embed/CVYSz_H4L9k?si=lW1XzoM2xQ-VcOKA" frameborder="0"></iframe>
+    <?= get_option('top_youtube'); ?>
   </div>
 </section>
 <div class="c-section container mx-auto c-fade-in">
@@ -71,14 +66,14 @@ $lineups3 = get_posts($args);
 </div>
 <section id="lineup" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>LINE UP</h2>
+    <h2><?= get_option('top_lineup_title') ?></h2>
     <div class="flex items-center justify-around">
       <button id="lineup0810Button" class="text-accent js-lineup-toggler">8/10(SAT)</button>
       <button id="lineup0811Button" class="text-accent js-lineup-toggler">8/11(SUN)</button>
       <button id="lineup0812Button" class="text-accent js-lineup-toggler">8/12(MON)</button>
     </div>
     <div class="mt-4">
-      <div class="md:hidden">
+      <!-- <div class="md:hidden">
         <div class="p-lineup-list">
           <div id="lineup0810" class="js-lineup-target">
             <div class="flex flex-wrap">
@@ -141,8 +136,8 @@ $lineups3 = get_posts($args);
             </div>
           </div>
         </div>
-      </div>
-      <div class="hidden md:block">
+      </div> -->
+      <div class="">
         <div class="p-lineup-list">
           <div class="p-lineup-list__col">
             <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
@@ -152,7 +147,7 @@ $lineups3 = get_posts($args);
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold"><?php the_title();?></p>
+                    <p class="font-bold text-sm"><?php the_title();?></p>
                     <div class="flex justify-end">
                       <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
                       <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
@@ -170,7 +165,7 @@ $lineups3 = get_posts($args);
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold"><?php the_title();?></p>
+                    <p class="font-bold text-sm"><?php the_title();?></p>
                     <div class="flex justify-end">
                       <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
                       <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
@@ -182,13 +177,13 @@ $lineups3 = get_posts($args);
           </div>
           <div class="p-lineup-list__col">
             <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
-              <div class="">
+              <div class="mb-4">
                 <div class="c-card">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold"><?php the_title();?></p>
+                    <p class="font-bold text-sm"><?php the_title();?></p>
                     <div class="flex justify-end">
                       <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
                       <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
@@ -208,7 +203,7 @@ $lineups3 = get_posts($args);
 </div>
 <section id="timeTable" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>TIME TABLE</h2>
+    <h2><?= get_option('top_timetable_title'); ?></h2>
     <div class="flex items-center justify-around">
       <button class="text-accent">8/10(SAT)</button>
       <button class="text-accent">8/11(SUN)</button>
@@ -240,11 +235,11 @@ $lineups3 = get_posts($args);
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
 <div class="c-section c-fade-in">
-  <img src="<?= get_template_directory_uri(); ?>/assets/images/top-fv-2.png" alt="" class="mx-auto" />
+  <img src="<?= get_option('top_image2'); ?>" alt="" class="mx-auto" />
 </div>
 <section id="shop" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>SHOP</h2>
+    <h2><?= get_option('top_shop_title'); ?></h2>
     <div class="flex items-center justify-around">
       <button class="text-accent">8/10(SAT)</button>
       <button class="text-accent">8/11(SUN)</button>
@@ -277,8 +272,8 @@ $lineups3 = get_posts($args);
 </section>
 <section id="areaMap" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>AREA MAP</h2>
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/coming-soon.jpg" width="200" alt="" class="mx-auto">
+    <h2><?= get_option('top_area_title'); ?></h2>
+    <img src="<?= get_option('top_area_image'); ?>; ?>" width="200" alt="" class="mx-auto">
   </div>
 </section>
 <div class="c-section c-fade-in">
@@ -286,18 +281,18 @@ $lineups3 = get_posts($args);
 </div>
 <section id="access" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>ACCESS</h2>
-    <img src="<?= get_template_directory_uri(); ?>/assets/images/access.jpg" alt="" class="mx-auto">
+    <h2><?= get_option('top_access_title'); ?></h2>
+    <img src="<?= get_option('top_access_image'); ?>" alt="" class="mx-auto">
     <div>
-      <p class="text-lg">千葉市蘇我スポーツ公園</p>
-      <p>〒260-0835 千葉市中央区川崎町1-20</p>
-      <iframe class="w-full" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6490.342141493339!2d140.1229314!3d35.5741692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60229b0b9c50b1c9%3A0xdcf05836c92a2aad!2sSoga%20Sports%20Park!5e0!3m2!1sen!2sjp!4v1720687153826!5m2!1sen!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="text-lg"><?= get_option('top_address_title'); ?></p>
+      <p><?= get_option('top_address_text'); ?></p>
+      <?= get_option('top_googlemap'); ?>
     </div>
   </div>
 </section>
 <section id="news" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>NEWS</h2>
+    <h2><?= get_option('top_news_title'); ?></h2>
     <ul class="list-disc list-inside">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <!-- ループ処理(例) -->
@@ -311,32 +306,14 @@ $lineups3 = get_posts($args);
 </div>
 <section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>What is PERFECT BEER?</h2>
-    <h2>「最高のビール体験で、人生をもっと豊かに」</h2>
-    <p>現場スタッフ、お客様、関わる全ての方の人生をもっと豊かにしたい。そんな想いで営業しているビールと唐揚げの専門店です。日本を代表するビールメーカーを作ることを目標に掲げ、まずは日本一のビール屋を作るため、全国フランチャイズの展開中です。</p>
-    <div class="mt-12">
-      <img src="<?= get_template_directory_uri(); ?>/assets/images/beer.png" alt="" class="mx-auto">
-    </div>
-    <div class="mt-12">
-      <h2>「PERFECT BEERの定義」</h2>
-      <p>パーフェクトビアとは、銘柄のことではなく株式会社PERFECT BEER独自で定義した4つの項目をクリアした樽生ビールのこと。</p>
-      <p>樽生ビールは同じ銘柄でのみ、サーバーの管理の仕方やグラスの洗浄など品質管理で大きな差が出ます。</p>
-      <p>その管理を完璧に行い最高の状態で提供される樽生ビールのことをパーフェクトビアと定義をつけました。</p>
-    </div>
-    <div class="mt-12 text-center">
-      <a href="/" class="flex justify-center items-center"><span>詳しくはこちら</span> <span class="material-symbols-outlined">arrow_outward</span></a>
-    </div>
+    <h2><?= get_option('top_about_title'); ?></h2>
+    <div><?= get_option('top_about_text'); ?></div>
   </div>
 </section>
 <section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2>COLUMN</h2>
-    <h2 class="text-left">世の中に彩りと感情に揺さぶりを</h2>
-    <p>をテーマに掲げイベント活動を行っています。</p>
-    <p>人生の中の今日という日にイベントを通して、私達が創るこの瞬間が皆様の人生に彩りを添えて、感情が揺さぶられる体験と思い出を提供できたらと考えています。</p>
-    <p>世の中には様々な人がいます。色々な生き方や在り方があるという多様性を認め合い、何歳になってもワクワクできるような場所や体験を作っていきたいと思っています。</p>
-    <p>そんな想いを乗せて、作られたのが今回のイベントです。</p>
-    <p>出演者や出店者はもちろん、お客様や地域の方々、運営や裏方もみんなが主役で、みんなが自由に楽しめるイベントにしたいと考えています。</p>
+    <h2><?= get_option('top_column_title'); ?></h2>
+    <div><?= get_option('top_column_text'); ?></div>
   </div>
 </section>
 <section class="c-section container mx-auto c-fade-in">

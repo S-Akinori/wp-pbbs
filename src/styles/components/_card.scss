@@ -1,3 +1,5 @@
+@use '../global/' as g;
+
 .c-card {
     background: #FEFEFE;
     border-radius: 0.5rem;
@@ -12,5 +14,8 @@
     object-fit: cover;
 }
 .c-card__body {
-    padding: 1rem;
+    padding: .5rem;
+    @include g.md {
+        padding: 1rem;
+    }
 }
