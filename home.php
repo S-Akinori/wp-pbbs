@@ -292,7 +292,7 @@ $lineups3 = get_posts($args);
 </section>
 <section id="news" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
-    <h2><?= get_option('top_news_title'); ?></h2>
+    <h2><?= get_option('top_new_title'); ?></h2>
     <ul class="list-disc list-inside">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <!-- ループ処理(例) -->
