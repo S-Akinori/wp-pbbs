@@ -47,38 +47,6 @@ $args = array(
 
 $lineups3 = get_posts($args);
 
-$args = array(
-  'post_type' => 'lineup', // カスタム投稿タイプの名前
-  'posts_per_page' => -1, // すべての投稿を表示する場合
-  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
-  'order'          => 'ASC', // 昇順に並べ替えます。
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
-      'field'    => 'slug',
-      'terms'    => 'main-stage', // タームのスラッグ
-    ),
-  ),
-);
-
-$main_stage_lineups = get_posts($args);
-
-$args = array(
-  'post_type' => 'lineup', // カスタム投稿タイプの名前
-  'posts_per_page' => -1, // すべての投稿を表示する場合
-  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
-  'order'          => 'ASC', // 昇順に並べ替えます。
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
-      'field'    => 'slug',
-      'terms'    => 'dj-booth', // タームのスラッグ
-    ),
-  ),
-);
-
-$dj_booth_lineups = get_posts($args);
-
 ?>
 <?php get_header(); ?>
 <div class="mt-24">
@@ -249,7 +217,7 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($main_stage_lineups as $post) : setup_postdata($post); if(has_term('8-10', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups1 as $post) : ?>
                 <?php
                  $start_time = get_field('start_time');
                   $end_time = get_field('end_time');
@@ -268,7 +236,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -277,10 +245,10 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($dj_booth_lineups as $post) : setup_postdata($post); if(has_term('8-10', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                 $start_time = get_field('dj_start_time');
+                  $end_time = get_field('dj_end_time');
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -296,7 +264,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -307,7 +275,7 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($main_stage_lineups as $post) : setup_postdata($post); if(has_term('8-11', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups2 as $post) : setup_postdata($post); ?>
                 <?php
                  $start_time = get_field('start_time');
                   $end_time = get_field('end_time');
@@ -326,7 +294,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -335,10 +303,10 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($dj_booth_lineups as $post) : setup_postdata($post); if(has_term('8-11', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups2 as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                 $start_time = get_field('dj_start_time');
+                  $end_time = get_field('dj_end_time');
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -354,7 +322,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -365,7 +333,7 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($main_stage_lineups as $post) : setup_postdata($post); if(has_term('8-12', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups3 as $post) : setup_postdata($post); ?>
                 <?php
                  $start_time = get_field('start_time');
                   $end_time = get_field('end_time');
@@ -384,7 +352,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -393,10 +361,10 @@ $dj_booth_lineups = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($dj_booth_lineups as $post) : setup_postdata($post); if(has_term('8-12', 'lineup-cat', $post->ID)) : ?>
+              <?php foreach($lineups3 as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                 $start_time = get_field('dj_start_time');
+                  $end_time = get_field('dj_end_time');
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -412,7 +380,7 @@ $dj_booth_lineups = get_posts($args);
                     <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endif; endforeach; wp_reset_postdata(); ?>
+              <?php endforeach; wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
