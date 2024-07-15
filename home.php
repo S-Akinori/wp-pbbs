@@ -59,7 +59,7 @@ $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
 <div class="mt-24">
-  <img src="<?= get_option('top_image');?>" alt="mx-auto" />
+  <img src="<?= get_option('top_image'); ?>" alt="mx-auto" />
 </div>
 <div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bird.png" alt="" class="mx-auto">
@@ -87,62 +87,65 @@ $lineups3 = get_posts($args);
         <div class="p-lineup-list">
           <div id="lineup0810" class="js-lineup-target">
             <div class="flex flex-wrap">
-              <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+              <?php foreach ($lineups1 as $post) : setup_postdata($post) ?>
                   <div class="p-lineup-list__item">
                     <div class="c-card">
                       <div class="c-card__image">
                         <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                       </div>
                       <div class="c-card__body">
-                        <p class="font-bold"><?php the_title();?></p>
+                        <p class="font-bold"><?php the_title(); ?></p>
                         <div class="flex justify-end">
-                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                <?php endforeach; wp_reset_postdata(); ?>
+                <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           </div>
           <div id="lineup0811" class="js-lineup-target hidden">
             <div class="flex flex-wrap">
-              <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
+              <?php foreach ($lineups2 as $post) : setup_postdata($post) ?>
                   <div class="p-lineup-list__item">
                     <div class="c-card">
                       <div class="c-card__image">
                         <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                       </div>
                       <div class="c-card__body">
-                        <p class="font-bold"><?php the_title();?></p>
+                        <p class="font-bold"><?php the_title(); ?></p>
                         <div class="flex justify-end">
-                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                <?php endforeach; wp_reset_postdata(); ?>
+                <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           </div>
           <div id="lineup0812" class="js-lineup-target hidden">
             <div class="flex flex-wrap">
-              <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
+              <?php foreach ($lineups3 as $post) : setup_postdata($post) ?>
                   <div class="p-lineup-list__item">
                     <div class="c-card">
                       <div class="c-card__image">
                         <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                       </div>
                       <div class="c-card__body">
-                        <p class="font-bold"><?php the_title();?></p>
+                        <p class="font-bold"><?php the_title(); ?></p>
                         <div class="flex justify-end">
-                          <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                          <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                          <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                         </div>
                       </div>
                     </div>
                   </div>
-                <?php endforeach; wp_reset_postdata(); ?>
+                <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           </div>
         </div>
@@ -150,58 +153,61 @@ $lineups3 = get_posts($args);
       <div class="">
         <div class="p-lineup-list">
           <div class="p-lineup-list__col">
-            <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+            <?php foreach ($lineups1 as $post) : setup_postdata($post) ?>
               <div class="mb-4">
                 <div class="c-card">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold text-xs md:text-sm"><?php the_title();?></p>
+                    <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
                     <div class="flex justify-end">
-                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                     </div>
                   </div>
                 </div>
               </div>
-            <?php endforeach; wp_reset_postdata(); ?>
+            <?php endforeach;
+            wp_reset_postdata(); ?>
           </div>
           <div class="p-lineup-list__col">
-            <?php foreach($lineups2 as $post) : setup_postdata($post) ?>
+            <?php foreach ($lineups2 as $post) : setup_postdata($post) ?>
               <div class="mb-4">
                 <div class="c-card">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold text-xs md:text-sm"><?php the_title();?></p>
+                    <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
                     <div class="flex justify-end">
-                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                     </div>
                   </div>
                 </div>
               </div>
-            <?php endforeach; wp_reset_postdata(); ?>
+            <?php endforeach;
+            wp_reset_postdata(); ?>
           </div>
           <div class="p-lineup-list__col">
-            <?php foreach($lineups3 as $post) : setup_postdata($post) ?>
+            <?php foreach ($lineups3 as $post) : setup_postdata($post) ?>
               <div class="mb-4">
                 <div class="c-card">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold text-xs md:text-sm"><?php the_title();?></p>
+                    <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
                     <div class="flex justify-end">
-                      <a href="<?php the_field('instagram_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                      <a href="<?php the_field('x_url');?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                      <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
                     </div>
                   </div>
                 </div>
               </div>
-            <?php endforeach; wp_reset_postdata(); ?>
+            <?php endforeach;
+            wp_reset_postdata(); ?>
           </div>
         </div>
       </div>
@@ -226,28 +232,30 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : ?>
+              <?php foreach ($lineups as $post) : ?>
                 <?php
                 $timetable = get_field('timetable0810');
-                 $start_time = $timetable['main_start_time'];
-                  $end_time = $timetable['main_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                 if($start_hour == $i + 10) :
+                if(!(is_array($timetable) && isset($timetable['main_start_time']))) continue;
+                $start_time = $timetable['main_start_time'];
+                $end_time = $timetable['main_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -256,27 +264,29 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : setup_postdata($post) ?>
+              <?php foreach ($lineups as $post) : setup_postdata($post) ?>
                 <?php
-                  $timetable = get_field('timetable0810');
-                  $start_time = $timetable['dj_start_time'];
-                  $end_time = $timetable['dj_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                 if($start_hour == $i + 10) :
+                $timetable = get_field('timetable0810');
+                if(!(is_array($timetable) && isset($timetable['dj_start_time']))) continue;
+                $start_time = $timetable['dj_start_time'];
+                $end_time = $timetable['dj_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -287,28 +297,30 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : setup_postdata($post); ?>
+              <?php foreach ($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                  $timetable = get_field('timetable0811');
-                  $start_time = $timetable['main_start_time'];
-                  $end_time = $timetable['main_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                 if($start_hour == $i + 10) :
+                $timetable = get_field('timetable0811');
+                if(!(is_array($timetable) && isset($timetable['main_start_time']))) continue;
+                $start_time = $timetable['main_start_time'];
+                $end_time = $timetable['main_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -317,28 +329,30 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : setup_postdata($post); ?>
+              <?php foreach ($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                  $timetable = get_field('timetable0811');
-                  $start_time = $timetable['dj_start_time'];
-                  $end_time = $timetable['dj_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                 if($start_hour == $i + 10) :
+                $timetable = get_field('timetable0811');
+                if(!(is_array($timetable) && isset($timetable['dj_start_time']))) continue;
+                $start_time = $timetable['dj_start_time'];
+                $end_time = $timetable['dj_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -349,28 +363,30 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : setup_postdata($post); ?>
+              <?php foreach ($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                  $timetable = get_field('timetable0812');
-                  $start_time = $timetable['main_start_time'];
-                  $end_time = $timetable['main_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                 if($start_hour == $i + 10) :
+                $timetable = get_field('timetable0812');
+                if(!(is_array($timetable) && isset($timetable['main_start_time']))) continue;
+                $start_time = $timetable['main_start_time'];
+                $end_time = $timetable['main_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -379,28 +395,30 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups as $post) : setup_postdata($post); ?>
+              <?php foreach ($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                  $timetable = get_field('timetable0812');
-                  $start_time = $timetable['dj_start_time'];
-                  $end_time = $timetable['dj_end_time'];
-                  $parts = explode(":", $start_time);
-                                  if(!(is_array($parts) && isset($parts[0]))) continue;
-                 $start_hour = (int) $parts[0];
-                 $start_minute = (int) $parts[1];
-                  $parts = explode(":", $end_time);
-                  $end_hour = (int) $parts[0];
-                  $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                 if($start_hour == $i + 10) :
+                $timetable = get_field('timetable0812');
+                if(!(is_array($timetable) && isset($timetable['dj_start_time']))) continue;
+                $start_time = $timetable['dj_start_time'];
+                $end_time = $timetable['dj_end_time'];
+                $parts = explode(":", $start_time);
+                if (!(is_array($parts) && isset($parts[0]))) continue;
+                $start_hour = (int) $parts[0];
+                $start_minute = (int) $parts[1];
+                $parts = explode(":", $end_time);
+                $end_hour = (int) $parts[0];
+                $end_minute = (int) $parts[1];
+                // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
+                if ($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
-                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
+                  <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
                     <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
-              <?php endforeach; wp_reset_postdata(); ?>
+              <?php endforeach;
+              wp_reset_postdata(); ?>
             </div>
           <?php endfor; ?>
         </div>
@@ -474,7 +492,8 @@ $lineups3 = get_posts($args);
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <!-- ループ処理(例) -->
           <li><a href="<?php the_permalink() ?>"><?php the_date(); ?> <?php the_title(); ?></a></li>
-      <?php endwhile; endif; ?>
+      <?php endwhile;
+      endif; ?>
     </ul>
   </div>
 </section>
@@ -501,8 +520,8 @@ $lineups3 = get_posts($args);
       </a>
     </div>
     <div class="mb-4">
-      <a  href="https://docs.google.com/forms/d/1sTGOO63AK5rjUOvR4IMp9cqHxjITmE-RPW-3KonduIs/edit">
-      <img src="<?= get_template_directory_uri(); ?>/assets/images/apply2.png" alt="">
+      <a href="https://docs.google.com/forms/d/1sTGOO63AK5rjUOvR4IMp9cqHxjITmE-RPW-3KonduIs/edit">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply2.png" alt="">
       </a>
     </div>
     <div class="mb-4">
