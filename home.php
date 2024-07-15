@@ -4,6 +4,15 @@ $args = array(
   'posts_per_page' => -1, // すべての投稿を表示する場合
   'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
   'order'          => 'ASC', // 昇順に並べ替えます。
+);
+
+$lineups = get_posts($args);
+
+$args = array(
+  'post_type' => 'lineup', // カスタム投稿タイプの名前
+  'posts_per_page' => -1, // すべての投稿を表示する場合
+  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
+  'order'          => 'ASC', // 昇順に並べ替えます。
   'tax_query' => array(
     array(
       'taxonomy' => 'lineup-cat', // カスタムタクソノミーの名前
@@ -217,10 +226,11 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups1 as $post) : ?>
+              <?php foreach($lineups as $post) : ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                $timetable = get_field('timetable0810');
+                 $start_time = $timetable['main_start_time'];
+                  $end_time = $timetable['main_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -233,7 +243,7 @@ $lineups3 = get_posts($args);
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
@@ -245,23 +255,23 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups1 as $post) : setup_postdata($post) ?>
+              <?php foreach($lineups as $post) : setup_postdata($post) ?>
                 <?php
-                 $start_time = get_field('dj_start_time');
-                  $end_time = get_field('dj_end_time');
+                  $timetable = get_field('timetable0810');
+                  $start_time = $timetable['dj_start_time'];
+                  $end_time = $timetable['dj_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
                   $parts = explode(":", $end_time);
                   $end_hour = (int) $parts[0];
                   $end_minute = (int) $parts[1];
-                  // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
                  if($start_hour == $i + 10) :
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
@@ -275,10 +285,11 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups2 as $post) : setup_postdata($post); ?>
+              <?php foreach($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                  $timetable = get_field('timetable0811');
+                  $start_time = $timetable['main_start_time'];
+                  $end_time = $timetable['main_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -291,7 +302,7 @@ $lineups3 = get_posts($args);
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
@@ -303,10 +314,11 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups2 as $post) : setup_postdata($post); ?>
+              <?php foreach($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('dj_start_time');
-                  $end_time = get_field('dj_end_time');
+                  $timetable = get_field('timetable0811');
+                  $start_time = $timetable['dj_start_time'];
+                  $end_time = $timetable['dj_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -319,7 +331,7 @@ $lineups3 = get_posts($args);
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
@@ -333,10 +345,11 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups3 as $post) : setup_postdata($post); ?>
+              <?php foreach($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('start_time');
-                  $end_time = get_field('end_time');
+                  $timetable = get_field('timetable0812');
+                  $start_time = $timetable['main_start_time'];
+                  $end_time = $timetable['main_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -349,7 +362,7 @@ $lineups3 = get_posts($args);
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
@@ -361,10 +374,11 @@ $lineups3 = get_posts($args);
           <?php for ($i = 0; $i < 10; $i++) : ?>
             <div class="p-time-table__list__item">
               <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-              <?php foreach($lineups3 as $post) : setup_postdata($post); ?>
+              <?php foreach($lineups as $post) : setup_postdata($post); ?>
                 <?php
-                 $start_time = get_field('dj_start_time');
-                  $end_time = get_field('dj_end_time');
+                  $timetable = get_field('timetable0812');
+                  $start_time = $timetable['dj_start_time'];
+                  $end_time = $timetable['dj_end_time'];
                   $parts = explode(":", $start_time);
                  $start_hour = (int) $parts[0];
                  $start_minute = (int) $parts[1];
@@ -377,7 +391,7 @@ $lineups3 = get_posts($args);
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
                     <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
                   </div>
                 <?php endif; ?>
               <?php endforeach; wp_reset_postdata(); ?>
