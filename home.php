@@ -264,8 +264,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
@@ -292,8 +292,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
@@ -322,8 +322,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
@@ -350,8 +350,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
@@ -380,8 +380,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
@@ -408,8 +408,8 @@ $dj_booth_lineups = get_posts($args);
                   $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
                 ?>
                   <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10;?>rem; height: <?= $height / 10 ;?>rem;">
-                    <p class="font-bold"><?= the_title(); ?></p>
-                    <p><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
+                    <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
+                    <p class="p-time-table__list__item__content__time"><?= the_field('start_time'); ?> - <?= the_field('end_time'); ?></p>
                   </div>
                 <?php endif; ?>
               <?php endif; endforeach; wp_reset_postdata(); ?>
