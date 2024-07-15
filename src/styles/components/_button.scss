@@ -4,9 +4,35 @@
   padding: .5rem 1.5rem;
   background: g.$main_color;
   color: g.$main_color_cont;
+  transition: 300ms;
+}
+.c-button:hover {
+  opacity: 0.8;
 }
 
 .c-button--accent {
+  background: g.$accent_color;
+  color: g.$accent_color_cont;
+}
+
+.c-button--outline {
+  background: none;
+  border: 1px solid g.$main_color;
+  color: g.$main_color;
+}
+
+.c-button--outline:hover {
+  background: g.$main_color;
+  color: g.$main_color_cont;
+}
+
+.c-button--accent-outline {
+  background: none;
+  border: 1px solid g.$accent_color;
+  color: g.$accent_color;
+}
+
+.c-button--accent-outline:hover {
   background: g.$accent_color;
   color: g.$accent_color_cont;
 }

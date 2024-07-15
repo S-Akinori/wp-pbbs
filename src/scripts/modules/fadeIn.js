@@ -10,7 +10,7 @@ export const fadeIn = (target = '.c-fade-in') => {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2
+    threshold: 0
   }
   const observer = new IntersectionObserver(callback, options)
   const elements = document.querySelectorAll(target)
