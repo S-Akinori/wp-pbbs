@@ -64,6 +64,24 @@ function top_settings_page()
           <td><?php generate_upload_image_tag('top_image2', get_option('top_image2')); ?></td>
         </tr>
         <tr>
+          <th scope="row"><label for="top_shop_recruitment_title">ショップ募集タイトル</label></th>
+          <td colspan="2"><input name="top_shop_recruitment_title" type="text" id="top_shop_recruitment_title" value="<?php form_option('top_shop_recruitment_title'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th><label for="top_shop_recruitment_text">ショップ募集テキスト</label></th>
+          <td colspan="2">
+            <?php
+            $content = get_option('top_shop_recruitment_text');
+            $editor_id = 'top_shop_recruitment_text';
+            $settings = array(
+              'textarea_rows'  => 5,
+              'wpautop' => false
+            );
+            wp_editor($content, $editor_id, $settings);
+            ?>
+          </td>
+        </tr>
+        <tr>
           <th><label for="top_shop_title">ショップタイトル</label></th>
           <td colspan="2"><input name="top_shop_title" type="text" id="top_shop_title" value="<?php form_option('top_shop_title'); ?>" class="regular-text" /></td>
         </tr>
@@ -150,6 +168,8 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_lineup_title');
   register_setting('top_settings_group', 'top_timetable_title');
   register_setting('top_settings_group', 'top_image2');
+  register_setting('top_settings_group', 'top_shop_recruitment_title');
+  register_setting('top_settings_group', 'top_shop_recruitment_text');
   register_setting('top_settings_group', 'top_shop_title');
   register_setting('top_settings_group', 'top_area_title');
   register_setting('top_settings_group', 'top_area_image');
