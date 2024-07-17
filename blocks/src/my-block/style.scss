@@ -1,0 +1,7 @@
+@use '~src/styles/global' as g;
+
+.wp-block-mytheme-my-custom-block {
+    border: 1px solid g.$main_color;
+    padding: 20px;
+    text-align: center;
+}

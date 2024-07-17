@@ -60,6 +60,18 @@ function top_settings_page()
           <td><textarea name="top_timetable_title" id="top_timetable_title" class="regular-text"><?php form_option('top_timetable_title'); ?></textarea></td>
         </tr>
         <tr>
+          <th scope="row"><label for="top_timetable_image_0">タイムテーブル画像8/10</label></th>
+          <td><?php generate_upload_image_tag('top_timetable_image_0', get_option('top_timetable_image_0')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_timetable_image_1">タイムテーブル画像8/11</label></th>
+          <td><?php generate_upload_image_tag('top_timetable_image_1', get_option('top_timetable_image_1')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_timetable_image_2">タイムテーブル画像8/12</label></th>
+          <td><?php generate_upload_image_tag('top_timetable_image_2', get_option('top_timetable_image_2')); ?></td>
+        </tr>
+        <tr>
           <th scope="row"><label for="top_image2">画像2</label></th>
           <td><?php generate_upload_image_tag('top_image2', get_option('top_image2')); ?></td>
         </tr>
@@ -153,6 +165,46 @@ function top_settings_page()
             ?>
           </td>
         </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_link">チケットリンク</label></th>
+          <td><input name="top_ticket_link" type="text" id="top_ticket_link" value="<?php form_option('top_ticket_link'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_image">チケット画像</label></th>
+          <td><?php generate_upload_image_tag('top_ticket_image', get_option('top_ticket_image')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_sponsor_link">スポンサーリンク</label></th>
+          <td><input name="top_sponsor_link" type="text" id="top_sponsor_link" value="<?php form_option('top_sponsor_link'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_sponsor_image">スポンサー画像</label></th>
+          <td><?php generate_upload_image_tag('top_sponsor_image', get_option('top_sponsor_image')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_volunteer_link">ボランティアリンク</label></th>
+          <td><input name="top_volunteer_link" type="text" id="top_volunteer_link" value="<?php form_option('top_volunteer_link'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_volunteer_image">ボランティア画像</label></th>
+          <td><?php generate_upload_image_tag('top_volunteer_image', get_option('top_volunteer_image')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_shop_link">出展者リンク</label></th>
+          <td><input name="top_shop_link" type="text" id="top_shop_link" value="<?php form_option('top_shop_link'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_shop_image">出展者画像</label></th>
+          <td><?php generate_upload_image_tag('top_shop_image', get_option('top_shop_image')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_artist_link">アーティストリンク</label></th>
+          <td><input name="top_artist_link" type="text" id="top_artist_link" value="<?php form_option('top_artist_link'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_artist_image">アーティスト画像</label></th>
+          <td><?php generate_upload_image_tag('top_artist_image', get_option('top_artist_image')); ?></td>
+        </tr>
       </table>
       <?php submit_button(); ?>
     </form>
@@ -167,6 +219,9 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_youtube');
   register_setting('top_settings_group', 'top_lineup_title');
   register_setting('top_settings_group', 'top_timetable_title');
+  register_setting('top_settings_group', 'top_timetable_image_0');
+  register_setting('top_settings_group', 'top_timetable_image_1');
+  register_setting('top_settings_group', 'top_timetable_image_2');
   register_setting('top_settings_group', 'top_image2');
   register_setting('top_settings_group', 'top_shop_recruitment_title');
   register_setting('top_settings_group', 'top_shop_recruitment_text');
@@ -183,5 +238,15 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_about_text');
   register_setting('top_settings_group', 'top_column_title');
   register_setting('top_settings_group', 'top_column_text');
+  register_setting('top_settings_group', 'top_ticket_link');
+  register_setting('top_settings_group', 'top_ticket_image');
+  register_setting('top_settings_group', 'top_sponsor_link');
+  register_setting('top_settings_group', 'top_sponsor_image');
+  register_setting('top_settings_group', 'top_volunteer_link');
+  register_setting('top_settings_group', 'top_volunteer_image');
+  register_setting('top_settings_group', 'top_shop_link');
+  register_setting('top_settings_group', 'top_shop_image');
+  register_setting('top_settings_group', 'top_artist_link');
+  register_setting('top_settings_group', 'top_artist_image');
 }
 ?>

@@ -59,7 +59,7 @@ $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
 <div class="mt-24">
-  <img src="<?= get_option('top_image'); ?>" alt="mx-auto" />
+  <img src="<?= get_option('top_image'); ?>" class="mx-auto" />
 </div>
 <div class="c-section container mx-auto">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bird.png" alt="" class="mx-auto">
@@ -71,6 +71,11 @@ $lineups3 = get_posts($args);
     <?= get_option('top_youtube'); ?>
   </div>
 </section>
+<div class="c-section container">
+  <a href="<?= get_option('top_ticket_link'); ?>">
+    <img src="<?= get_option('top_ticket_image'); ?>" alt="">
+  </a>
+</div>
 <div class="c-section container mx-auto c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
 </div>
@@ -233,7 +238,7 @@ $lineups3 = get_posts($args);
                     <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
                     <?php foreach ($lineups as $post) : ?>
                       <?php
-                      $timetable = get_field("timetable081".$j);
+                      $timetable = get_field("timetable081" . $j);
                       if (!(is_array($timetable) && isset($timetable['main_start_time']))) continue;
                       $start_time = $timetable['main_start_time'];
                       $end_time = $timetable['main_end_time'];
@@ -266,7 +271,7 @@ $lineups3 = get_posts($args);
                     <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
                     <?php foreach ($lineups as $post) : setup_postdata($post) ?>
                       <?php
-                      $timetable = get_field("timetable081".$j);
+                      $timetable = get_field("timetable081" . $j);
                       if (!(is_array($timetable) && isset($timetable['dj_start_time']))) continue;
                       $start_time = $timetable['dj_start_time'];
                       $end_time = $timetable['dj_end_time'];
@@ -309,8 +314,8 @@ $lineups3 = get_posts($args);
   <h2><?= get_option('top_shop_recruitment_title'); ?></h2>
   <div class="text-center mb-4"><?= get_option('top_shop_recruitment_text'); ?></div>
   <div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSceqtyBzgT74TOxOTvL9QCsUIAy-4zGBsZDTkiS6Kr5jP2NYQ/viewform">
-      <img src="<?= get_template_directory_uri(); ?>/assets/images/apply3.png" alt="">
+    <a href="<?= get_option('top_shop_link'); ?>">
+      <img src="<?= get_option('top_shop_image'); ?>" alt="">
     </a>
   </div>
 </section>
@@ -397,23 +402,23 @@ $lineups3 = get_posts($args);
 <section class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <div class="mb-4">
-      <a href="https://docs.google.com/forms/d/1WZnq9EIO9NPwONTLuK4ZJrndIq5Tu0aYxy33jchiaOs/edit">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply1.png" alt="">
+      <a href="<?= get_option('top_sponsor_link'); ?>">
+        <img src="<?= get_option('top_sponsor_image'); ?>" alt="">
       </a>
     </div>
     <div class="mb-4">
-      <a href="https://docs.google.com/forms/d/1sTGOO63AK5rjUOvR4IMp9cqHxjITmE-RPW-3KonduIs/edit">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply2.png" alt="">
+      <a href="<?= get_option('top_volunteer_link'); ?>">
+        <img src="<?= get_option('top_volunteer_image'); ?>" alt="">
       </a>
     </div>
     <div class="mb-4">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSceqtyBzgT74TOxOTvL9QCsUIAy-4zGBsZDTkiS6Kr5jP2NYQ/viewform">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply3.png" alt="">
+      <a href="<?= get_option('top_shop_link'); ?>">
+        <img src="<?= get_option('top_shop_image'); ?>" alt="">
       </a>
     </div>
     <div class="mb-4">
-      <a href="https://docs.google.com/forms/d/15XPiChsItqQGwdbcAWBMPTbVb5GG423Kknc4N3f6ba4/edit">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/apply4.png" alt="">
+      <a href="<?= get_option('top_artist_link'); ?>">
+        <img src="<?= get_option('top_artist_image'); ?>" alt="">
       </a>
     </div>
   </div>
