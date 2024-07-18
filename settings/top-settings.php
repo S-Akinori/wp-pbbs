@@ -166,12 +166,32 @@ function top_settings_page()
           </td>
         </tr>
         <tr>
-          <th scope="row"><label for="top_ticket_link">チケットリンク</label></th>
-          <td><input name="top_ticket_link" type="text" id="top_ticket_link" value="<?php form_option('top_ticket_link'); ?>" class="regular-text" /></td>
-        </tr>
-        <tr>
           <th scope="row"><label for="top_ticket_image">チケット画像</label></th>
           <td><?php generate_upload_image_tag('top_ticket_image', get_option('top_ticket_image')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_image_0">チケット購入画像1</label></th>
+          <td><?php generate_upload_image_tag('top_ticket_image_0', get_option('top_ticket_image_0')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_link_0">チケットリンク1</label></th>
+          <td><input name="top_ticket_link_0" type="text" id="top_ticket_link_0" value="<?php form_option('top_ticket_link_0'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_image_1">チケット購入画像2</label></th>
+          <td><?php generate_upload_image_tag('top_ticket_image_1', get_option('top_ticket_image_1')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_link_1">チケットリンク2</label></th>
+          <td><input name="top_ticket_link_1" type="text" id="top_ticket_link_1" value="<?php form_option('top_ticket_link_1'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_image_2">チケット購入画像3</label></th>
+          <td><?php generate_upload_image_tag('top_ticket_image_2', get_option('top_ticket_image_2')); ?></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="top_ticket_link_2">チケットリンク3</label></th>
+          <td><input name="top_ticket_link_2" type="text" id="top_ticket_link_2" value="<?php form_option('top_ticket_link_2'); ?>" class="regular-text" /></td>
         </tr>
         <tr>
           <th scope="row"><label for="top_sponsor_link">スポンサーリンク</label></th>
@@ -240,6 +260,12 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_column_text');
   register_setting('top_settings_group', 'top_ticket_link');
   register_setting('top_settings_group', 'top_ticket_image');
+  register_setting('top_settings_group', 'top_ticket_image_0');
+  register_setting('top_settings_group', 'top_ticket_link_0');
+  register_setting('top_settings_group', 'top_ticket_image_1');
+  register_setting('top_settings_group', 'top_ticket_link_1');
+  register_setting('top_settings_group', 'top_ticket_image_2');
+  register_setting('top_settings_group', 'top_ticket_link_2');
   register_setting('top_settings_group', 'top_sponsor_link');
   register_setting('top_settings_group', 'top_sponsor_image');
   register_setting('top_settings_group', 'top_volunteer_link');

@@ -72,9 +72,18 @@ $lineups3 = get_posts($args);
   </div>
 </section>
 <div class="c-section container">
-  <a href="<?= get_option('top_ticket_link'); ?>">
-    <img src="<?= get_option('top_ticket_image'); ?>" alt="">
-  </a>
+  <div class="mb-4">
+    <img src="<?= get_option('top_ticket_image'); ?>" class="mx-auto" alt="">
+  </div>
+  <div class="md:flex">
+    <?php for ($i = 0; $i < 3; $i++) : ?>
+      <div class="md:w-1/3">
+        <a href="<?= get_option('top_ticket_link_' . $i); ?>">
+          <img src="<?= get_option('top_ticket_image_' . $i); ?>" class="mx-auto" alt="">
+        </a>
+      </div>
+    <?php endfor; ?>
+  </div>
 </div>
 <div class="c-section container mx-auto c-fade-in">
   <img src="<?= get_template_directory_uri(); ?>/assets/images/bg-bubble.png" alt="" class="mx-auto">
