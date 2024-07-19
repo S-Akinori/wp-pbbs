@@ -59,7 +59,7 @@ $lineups3 = get_posts($args);
 ?>
 <?php get_header(); ?>
 <div class="p-top-fixed-button">
-  <a href="<?= home_url('sponsor');?>"><img src="<?= get_template_directory_uri(); ?>/assets/images/sponsor.png" alt=""></a>
+  <a href="<?= home_url('sponsor');?>"><img src="<?= get_template_directory_uri(); ?>/assets/images/sponsor.PNG" alt=""></a>
 </div>
 <div class="mt-24">
   <img src="<?= get_option('top_image'); ?>" class="mx-auto" />
