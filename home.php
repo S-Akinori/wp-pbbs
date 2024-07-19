@@ -58,6 +58,9 @@ $lineups3 = get_posts($args);
 
 ?>
 <?php get_header(); ?>
+<div class="p-top-fixed-button">
+  <a href="<?= home_url('sponsor');?>"><img src="<?= get_template_directory_uri(); ?>/assets/images/sponsor.png" alt=""></a>
+</div>
 <div class="mt-24">
   <img src="<?= get_option('top_image'); ?>" class="mx-auto" />
 </div>
@@ -235,78 +238,9 @@ $lineups3 = get_posts($args);
   <div class="c-box">
     <h2><?= get_option('top_timetable_title'); ?></h2>
     <div class="mt-4 md:flex justify-between">
-      <?php for ($j = 0; $j < 3; $j++) : ?>
-        <div class="md:w-full md:flex justify-between">
-          <div class="w-full p-2">
-            <div class="text-accent text-center mb-4">8/1<?= $j; ?></div>
-            <div class="p-time-table">
-              <div class="p-time-table__list">
-                <div class="bg-[#F4BE74] p-4 text-center rounded-tl-lg rounded-tr-lg">MAIN STAGE</div>
-                <?php for ($i = 0; $i < 10; $i++) : ?>
-                  <div class="p-time-table__list__item">
-                    <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-                    <?php foreach ($lineups as $post) : ?>
-                      <?php
-                      $timetable = get_field("timetable081" . $j);
-                      if (!(is_array($timetable) && isset($timetable['main_start_time']))) continue;
-                      $start_time = $timetable['main_start_time'];
-                      $end_time = $timetable['main_end_time'];
-                      $parts = explode(":", $start_time);
-                      if (!(is_array($parts) && isset($parts[0]) && isset($parts[1]))) continue;
-                      $start_hour = (int) $parts[0];
-                      $start_minute = (int) $parts[1];
-                      $parts = explode(":", $end_time);
-                      if (!(is_array($parts) && isset($parts[0]) && isset($parts[1]))) continue;
-                      $end_hour = (int) $parts[0];
-                      $end_minute = (int) $parts[1];
-                      // var_dump($start_hour, $start_minute, $end_hour, $end_minute);
-                      if ($start_hour == $i + 10) :
-                        $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
-                      ?>
-                        <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
-                          <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                          <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
-                        </div>
-                      <?php endif; ?>
-                    <?php endforeach;
-                    wp_reset_postdata(); ?>
-                  </div>
-                <?php endfor; ?>
-              </div>
-              <div class="p-time-table__list">
-                <div class="bg-[#F4BE74] p-4 text-center rounded-tl-lg rounded-tr-lg bg-accent">DJ BOOTH</div>
-                <?php for ($i = 0; $i < 10; $i++) : ?>
-                  <div class="p-time-table__list__item">
-                    <p class="p-time-table__list__item__time">1<?= $i; ?>:00</p>
-                    <?php foreach ($lineups as $post) : setup_postdata($post) ?>
-                      <?php
-                      $timetable = get_field("timetable081" . $j);
-                      if (!(is_array($timetable) && isset($timetable['dj_start_time']))) continue;
-                      $start_time = $timetable['dj_start_time'];
-                      $end_time = $timetable['dj_end_time'];
-                      $parts = explode(":", $start_time);
-                      if (!(is_array($parts) && isset($parts[0]) && isset($parts[1]))) continue;
-                      $start_hour = (int) $parts[0];
-                      $start_minute = (int) $parts[1];
-                      $parts = explode(":", $end_time);
-                      if (!(is_array($parts) && isset($parts[0]) && isset($parts[1]))) continue;
-                      $end_hour = (int) $parts[0];
-                      $end_minute = (int) $parts[1];
-                      if ($start_hour == $i + 10) :
-                        $height = (int) (($end_hour - $start_hour) * 60 + ($end_minute - $start_minute));
-                      ?>
-                        <div class="p-time-table__list__item__content" style="top:<?= $start_minute / 10; ?>rem; height: <?= $height / 10; ?>rem;">
-                          <p class="p-time-table__list__item__content__title"><?= the_title(); ?></p>
-                          <p class="p-time-table__list__item__content__time"><?= $start_time; ?> - <?= $end_time; ?></p>
-                        </div>
-                      <?php endif; ?>
-                    <?php endforeach;
-                    wp_reset_postdata(); ?>
-                  </div>
-                <?php endfor; ?>
-              </div>
-            </div>
-          </div>
+      <?php for ($i = 0; $i < 3; $i++) : ?>
+        <div class="md:w-1/3">
+          <img src="<?= get_option('top_timetable_image_' . $i) ?>" class="mx-auto" alt="">
         </div>
       <?php endfor; ?>
     </div>

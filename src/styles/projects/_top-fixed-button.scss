@@ -1,0 +1,12 @@
+.p-top-fixed-button {
+    position: fixed;
+    bottom: .5rem;
+    right: .5rem;
+    z-index: 9999;
+    transition: 300ms;
+    width: 160px;
+    height: 160px;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
