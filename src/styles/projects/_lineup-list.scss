@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     border-radius: .5rem;
-    background: linear-gradient(to right, #7fcef4 33.33%, #c5ecff 33.33%, #c5ecff 66.66%, #7fcef4 66.66%);
     // background: linear-gradient(to right, #7fcef4 50%, #c5ecff 50%);
     // @include g.md {
     //     background: linear-gradient(to right, #7fcef4 33.33%, #c5ecff 33.33%, #c5ecff 66.66%, #7fcef4 66.66%);
@@ -16,6 +15,20 @@
     //     padding: 1rem;
     //     width: calc(100% / 3);
     // }
+}
+.p-lineup-list__col:nth-of-type(odd) {
+    background: #7fcef4;
+}
+.p-lineup-list__col:nth-of-type(even) {
+    background: #c5ecff;
+}
+.p-lineup-list__col:first-of-type {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+.p-lineup-list__col:last-of-type {
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
 }
 .p-lineup-list__item {
     padding: .5rem;

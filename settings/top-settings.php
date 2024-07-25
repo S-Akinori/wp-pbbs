@@ -72,6 +72,10 @@ function top_settings_page()
           <td><?php generate_upload_image_tag('top_timetable_image_2', get_option('top_timetable_image_2')); ?></td>
         </tr>
         <tr>
+          <th scope="row"><label for="top_drink_image">ドリンク画像</label></th>
+          <td><?php generate_upload_image_tag('top_drink_image', get_option('top_drink_image')); ?></td>
+        </tr>
+        <tr>
           <th scope="row"><label for="top_image2">画像2</label></th>
           <td><?php generate_upload_image_tag('top_image2', get_option('top_image2')); ?></td>
         </tr>
@@ -242,6 +246,7 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_timetable_image_0');
   register_setting('top_settings_group', 'top_timetable_image_1');
   register_setting('top_settings_group', 'top_timetable_image_2');
+  register_setting('top_settings_group', 'top_drink_image');
   register_setting('top_settings_group', 'top_image2');
   register_setting('top_settings_group', 'top_shop_recruitment_title');
   register_setting('top_settings_group', 'top_shop_recruitment_text');
