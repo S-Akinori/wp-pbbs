@@ -87,10 +87,12 @@ $foods = get_posts($args);
     <?php foreach ($stages as $stage): ?>
       <div class="mb-8">
         <h3 class="text-center"><?= $stage ?></h3>
-        <div class="flex items-center justify-around mb-4">
-          <div class="text-accent text-lg">8/10(SAT)</div>
-          <div class="text-accent text-lg">8/11(SUN)</div>
-          <div class="text-accent text-lg">8/12(MON)</div>
+        <div class="flex items-center mb-4">
+          <div class="text-accent w-1/3 text-center text-lg">8/10(SAT)</div>
+          <div class="text-accent w-1/3 text-center text-lg">8/11(SUN)</div>
+          <?php if ($stage !== 'MAIN STAGE') : ?>
+          <div class="text-accent w-1/3 text-center text-lg">8/12(MON)</div>
+          <?php endif; ?>
         </div>
         <div class="p-lineup-list">
           <?php foreach ($dates as $date):
@@ -112,6 +114,7 @@ $foods = get_posts($args);
               ),
             );
             $lineups = get_posts($args);
+            if($stage !== 'MAIN STAGE' || $date !== '8/12') :
           ?>
           <div class="p-lineup-list__col">
             <?php foreach($lineups as $post) : setup_postdata($post);?>
@@ -131,7 +134,7 @@ $foods = get_posts($args);
               </div>
             <?php endforeach; wp_reset_postdata(); ?>
           </div>
-          <?php endforeach; ?>
+          <?php endif; endforeach; ?>
         </div>
       </div>
     <?php endforeach; ?>
@@ -143,9 +146,14 @@ $foods = get_posts($args);
 <section id="timeTable" class="c-section container mx-auto c-fade-in">
   <div class="c-box">
     <h2><?= get_option('top_timetable_title'); ?></h2>
+    <div class="flex items-center justify-around mb-4 md:hidden">
+      <button id="timetable0Button" class="w-1/3 !p-2 text-sm c-button c-button--accent js-lineup-toggler">8/10(SAT)</button>
+      <button id="timetable1Button" class="w-1/3 !p-2 text-sm c-button c-button--accent-outline js-lineup-toggler">8/11(SUN)</button>
+      <button id="timetable2Button" class="w-1/3 !p-2 text-sm c-button c-button--accent-outline js-lineup-toggler">8/12(MON)</button>
+    </div>
     <div class="mt-4 flex justify-between">
       <?php for ($i = 0; $i < 3; $i++) : ?>
-        <div class="w-1/3">
+        <div id="timetable<?= $i;?>" class="md:w-1/3 js-lineup-target <?= $i !== 0 ? 'hidden md:block' : '' ?>">
           <img src="<?= get_option('top_timetable_image_' . $i) ?>" class="mx-auto" alt="">
         </div>
       <?php endfor; ?>

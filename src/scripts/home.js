@@ -43,12 +43,15 @@ $(function() {
     $('.sp-menu-container').toggleClass('active');
   })    
 
-  $('.js-lineup-toggler').on('click', function() {
-    const id = $(this).data('id');
-    const targetId = $(this).attr('id').replace('Button', '');
-    $('.js-lineup-target').hide();
-    $('.js-lineup-toggler').removeClass('c-button--accent').addClass('c-button--accent-outline');
-    $(this).removeClass('c-button--accent-outline').addClass('c-button--accent');
-    $(`#${targetId}`).fadeIn();
+  $('.c-section').each(function() {
+    const $section = $(this);
+    $section.find('.js-lineup-toggler').on('click', function() {
+      const id = $(this).data('id');
+      const targetId = $(this).attr('id').replace('Button', '');
+      $section.find('.js-lineup-target').hide();
+      $section.find('.js-lineup-toggler').removeClass('c-button--accent').addClass('c-button--accent-outline');
+      $(this).removeClass('c-button--accent-outline').addClass('c-button--accent');
+      $(`#${targetId}`).fadeIn();
+    })
   })
 })
