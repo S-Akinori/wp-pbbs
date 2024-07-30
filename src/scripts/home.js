@@ -43,7 +43,7 @@ $(function() {
     $('.sp-menu-container').toggleClass('active');
   })    
 
-  $('.c-section').each(function() {
+  $('.js-toggler-group').each(function() {
     const $section = $(this);
     $section.find('.js-lineup-toggler').on('click', function() {
       const id = $(this).data('id');

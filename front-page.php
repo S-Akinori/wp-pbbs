@@ -9,7 +9,7 @@ $args = array(
 $lineups = get_posts($args);
 
 $dates = ['8/10', '8/11', '8/12'];
-$stages = ['MC', 'MAIN STAGE', 'DJ BOOTH'];
+$stages = ['MC', 'PERFECT STAGE', 'CHEERZ STAGE'];
 
 $args = array(
   'post_type' => 'sponsor', // カスタム投稿タイプの名前
@@ -21,6 +21,8 @@ $sponsors = get_posts($args);
 $args = array(
   'post_type' => 'shop', // カスタム投稿タイプの名前
   'posts_per_page' => -1, // すべての投稿を表示する場合
+  'orderby'        => 'date', // 並べ替えの基準を日付に指定します。
+  'order'          => 'ASC', // 昇順に並べ替えます。
   'tax_query' => array(
     array(
       'taxonomy' => 'shop-cat',
@@ -85,17 +87,17 @@ $foods = get_posts($args);
   <div class="c-box">
     <h2><?= get_option('top_lineup_title') ?></h2>
     <?php foreach ($stages as $stage): ?>
-      <div class="mb-8">
+      <div class="mb-8 js-toggler-group">
         <h3 class="text-center"><?= $stage ?></h3>
-        <div class="flex items-center mb-4">
-          <div class="text-accent w-1/3 text-center text-lg">8/10(SAT)</div>
-          <div class="text-accent w-1/3 text-center text-lg">8/11(SUN)</div>
+        <div class="flex items-center justify-around mb-4">
+          <button id="lineup<?= str_replace(" ", "", $stage) ;?>0Button" class="w-1/3 !p-2 text-sm c-button c-button--accent js-lineup-toggler">8/10(SAT)</button>
+          <button id="lineup<?= str_replace(" ", "", $stage) ;?>1Button" class="w-1/3 !p-2 text-sm c-button c-button--accent-outline js-lineup-toggler">8/11(SUN)</button>
           <?php if ($stage !== 'MAIN STAGE') : ?>
-          <div class="text-accent w-1/3 text-center text-lg">8/12(MON)</div>
+          <button id="lineup<?= str_replace(" ", "", $stage) ;?>2Button" class="w-1/3 !p-2 text-sm c-button c-button--accent-outline js-lineup-toggler">8/12(MON)</button>
           <?php endif; ?>
         </div>
         <div class="p-lineup-list">
-          <?php foreach ($dates as $date):
+          <?php $i=0; foreach ($dates as $date):
             $args = array(
               'post_type' => 'lineup',
               'posts_per_page' => -1,
@@ -116,25 +118,25 @@ $foods = get_posts($args);
             $lineups = get_posts($args);
             if($stage !== 'MAIN STAGE' || $date !== '8/12') :
           ?>
-          <div class="p-lineup-list__col">
-            <?php foreach($lineups as $post) : setup_postdata($post);?>
-              <div class="mb-4 last:mb-0">
-                <div class="c-card">
-                  <div class="c-card__image">
-                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
-                  </div>
-                  <div class="c-card__body">
-                    <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
-                    <div class="flex justify-end">
-                      <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                      <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+            <div id="lineup<?= str_replace(" ", "", $stage) ;?><?=$i;?>" class="flex flex-wrap js-lineup-target <?= $i == 0 ? '' : 'hidden' ;?>">
+              <?php foreach($lineups as $post) : setup_postdata($post);?>
+                <div class="mb-4 p-2 md:p-4 w-1/3">
+                  <div class="c-card">
+                    <div class="c-card__image">
+                      <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+                    </div>
+                    <div class="c-card__body">
+                      <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
+                      <div class="flex justify-end">
+                        <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                        <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            <?php endforeach; wp_reset_postdata(); ?>
-          </div>
-          <?php endif; endforeach; ?>
+              <?php endforeach; wp_reset_postdata(); ?>
+            </div>
+          <?php $i++; endif; endforeach; ?>
         </div>
       </div>
     <?php endforeach; ?>
@@ -144,7 +146,7 @@ $foods = get_posts($args);
   <img src="<?= get_template_directory_uri(); ?>/assets/images/filler-bear.png" alt="" class="mx-auto">
 </div>
 <section id="timeTable" class="c-section container mx-auto c-fade-in">
-  <div class="c-box">
+  <div class="c-box js-toggler-group">
     <h2><?= get_option('top_timetable_title'); ?></h2>
     <div class="flex items-center justify-around mb-4 md:hidden">
       <button id="timetable0Button" class="w-1/3 !p-2 text-sm c-button c-button--accent js-lineup-toggler">8/10(SAT)</button>
@@ -180,11 +182,11 @@ $foods = get_posts($args);
   </div>
 </section>
 <section id="shop" class="c-section container mx-auto c-fade-in">
-  <div class="c-box">
+  <div class="c-box js-toggler-group">
     <h2><?= get_option('top_shop_title'); ?></h2>
     <div class="flex items-center justify-center">
-      <button id="shopsButton" class="mx-4 text-accent c-button c-button--accent text-lg js-lineup-toggler">SHOP</button>
       <button id="foodsButton" class="mx-4 text-accent c-button c-button--accent-outline text-lg js-lineup-toggler">FOOD</button>
+      <button id="shopsButton" class="mx-4 text-accent c-button c-button--accent text-lg js-lineup-toggler">SHOP</button>
     </div>
     <div class="mt-4">
       <div id="shops" class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center js-lineup-target">
@@ -296,12 +298,12 @@ $foods = get_posts($args);
   <div class="c-box">
     <h2>SPONSOR</h2>
     <div class="c-box bg-main-sub">
-      <div class="flex justify-center">
-        <?php foreach ($sponsors as $sponsor) : ?>
+      <div class="flex justify-center items-center">
+        <?php foreach ($sponsors as $post) : setup_postdata($post); ?>
           <div class="p-4 w-1/3">
-            <img src="<?= get_the_post_thumbnail_url($sponsor); ?>" alt="" />
+            <a href="<?php the_field('external_link');?>" target="_blank"><img src="<?= get_the_post_thumbnail_url($sponsor); ?>" alt="" /></a>  
           </div>
-        <?php endforeach; ?>
+        <?php endforeach; wp_reset_postdata(); ?>
       </div>
     </div>
   </div>

@@ -12,7 +12,6 @@
       <div>
         <?php the_content(); ?>
       </div>
-      <p><?php the_date(); ?></p>
       <div class="text-center mt-4">
         <a href="<?= home_url(); ?>#shop" class="c-button">SHOP一覧へ</a>
       </div>
