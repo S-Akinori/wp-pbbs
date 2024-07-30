@@ -1,6 +1,6 @@
 @use '../global/' as g;
 .p-lineup-list {
-    // display: flex;
+    display: flex;
     flex-wrap: wrap;
     border-radius: .5rem;
     background: linear-gradient(to right, #7fcef4 33.33%, #c5ecff 33.33%, #c5ecff 66.66%, #7fcef4 66.66%);

@@ -41,15 +41,27 @@ $(function() {
 
   $('.js-scroll-trigger').on('click', function() {
     $('.sp-menu-container').toggleClass('active');
-  })    
+  })
 
-  $('.js-toggler-group').each(function() {
+  $('.js-lineup-group').each(function() {
     const $section = $(this);
     $section.find('.js-lineup-toggler').on('click', function() {
       const id = $(this).data('id');
       const targetId = $(this).attr('id').replace('Button', '');
       $section.find('.js-lineup-target').hide();
       $section.find('.js-lineup-toggler').removeClass('c-button--accent').addClass('c-button--accent-outline');
+      $(this).removeClass('c-button--accent-outline').addClass('c-button--accent');
+      $(`#${targetId}`).fadeIn().css('display','flex');
+    })
+  })
+
+  $('.js-toggler-group').each(function() {
+    const $section = $(this);
+    $section.find('.js-fadein-toggler').on('click', function() {
+      const id = $(this).data('id');
+      const targetId = $(this).attr('id').replace('Button', '');
+      $section.find('.js-fadein-target').hide();
+      $section.find('.js-fadein-toggler').removeClass('c-button--accent').addClass('c-button--accent-outline');
       $(this).removeClass('c-button--accent-outline').addClass('c-button--accent');
       $(`#${targetId}`).fadeIn();
     })
