@@ -211,11 +211,11 @@ $foods = get_posts($args);
   <div class="c-box js-toggler-group">
     <h2><?= get_option('top_shop_title'); ?></h2>
     <div class="flex items-center justify-center">
-      <button id="foodsButton" class="mx-4 text-accent c-button c-button--accent-outline text-lg js-fadein-toggler">FOOD</button>
-      <button id="shopsButton" class="mx-4 text-accent c-button c-button--accent text-lg js-fadein-toggler">SHOP</button>
+      <button id="foodsButton" class="mx-4 text-accent c-button c-button--accent text-lg js-fadein-toggler">FOOD</button>
+      <button id="shopsButton" class="mx-4 text-accent c-button c-button--accent-outline text-lg js-fadein-toggler">SHOP</button>
     </div>
     <div class="mt-4">
-      <div id="shops" class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center js-fadein-target">
+      <div id="shops" class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center js-fadein-target" style="display:hidden;">
         <?php foreach($shops as $post) : setup_postdata($post); ?>
           <div class="p-2 md:p-4 w-1/2 md:w-1/3">
             <div class="c-card">
@@ -235,7 +235,7 @@ $foods = get_posts($args);
           </div>
         <?php endforeach; wp_reset_postdata(); ?>
       </div>
-      <div id="foods" class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center js-fadein-target" style="display:hidden;">
+      <div id="foods" class="p-2 md:p-4 bg-main-sub rounded-lg flex flex-wrap justify-center js-fadein-target">
         <?php foreach($foods as $post) : setup_postdata($post); ?>
           <div class="p-2 md:p-4 w-1/2 md:w-1/3">
             <div class="c-card">
