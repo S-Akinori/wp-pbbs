@@ -63,7 +63,7 @@ $foods = get_posts($args);
 </div>
 <section id="about" class="c-section container mx-auto c-fade-in">
   <h2><?= get_option('top_title'); ?></h2>
-  <div class="text-center"><?= get_option('top_text'); ?></div>
+  <div class="md:text-center"><?= get_option('top_text'); ?></div>
   <div class="mt-16 p-top-movie">
     <?= get_option('top_youtube'); ?>
   </div>
@@ -130,16 +130,16 @@ $foods = get_posts($args);
           <?php if ($stage === 'MC'): ?>
             <?php foreach($lineups as $post) : setup_postdata($post);?>
               <div class="mb-4 p-2 md:p-4 w-1/3">
-                <div class="c-card">
+                <div class="c-card h-full">
                   <div class="c-card__image">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                   </div>
                   <div class="c-card__body">
-                    <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
-                    <div class="flex justify-end">
-                      <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
-                      <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
-                    </div>
+                      <p class="font-bold text-xs md:text-sm"><?php the_title(); ?></p>
+                      <div class="flex justify-end">
+                        <a href="<?php the_field('instagram_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-ig-light-blue.png" width="30" height="30" alt="" /></a>
+                        <a href="<?php the_field('x_url'); ?>" class="mx-2"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-x-light-blue.png" width="30" height="30" alt="" /></a>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -148,7 +148,7 @@ $foods = get_posts($args);
               <div id="lineup<?= str_replace(" ", "", $stage) ;?><?=$i;?>" class="flex flex-wrap js-lineup-target <?= $i == 0 ? '' : 'hidden' ;?>">
                 <?php foreach($lineups as $post) : setup_postdata($post);?>
                   <div class="mb-4 p-2 md:p-4 w-1/3">
-                    <div class="c-card">
+                    <div class="c-card h-full">
                       <div class="c-card__image">
                         <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
                       </div>
