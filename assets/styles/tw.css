@@ -784,6 +784,10 @@ video {
     width: 50%;
   }
 
+  .md\:w-1\/5 {
+    width: 20%;
+  }
+
   .md\:justify-start {
     justify-content: flex-start;
   }

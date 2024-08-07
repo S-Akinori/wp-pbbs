@@ -326,9 +326,9 @@ $foods = get_posts($args);
   <div class="c-box">
     <h2>SPONSOR</h2>
     <div class="c-box bg-main-sub">
-      <div class="flex justify-center items-center">
+      <div class="flex flex-wrap justify-center items-center">
         <?php foreach ($sponsors as $post) : setup_postdata($post); ?>
-          <div class="p-4 w-1/3">
+          <div class="p-4 w-1/3 md:w-1/5">
             <a href="<?php the_field('external_link');?>" target="_blank"><img src="<?= get_the_post_thumbnail_url(); ?>" alt="" /></a>  
           </div>
         <?php endforeach; wp_reset_postdata(); ?>
