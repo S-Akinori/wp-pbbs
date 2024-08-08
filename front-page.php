@@ -68,6 +68,9 @@ $foods = get_posts($args);
     <?= get_option('top_youtube'); ?>
   </div>
 </section>
+<div class="c-section container mx-auto c-fade-in">
+  <img src="<?= get_option('top_campaign_image');?>" alt="" class="mx-auto">
+</div>
 <div class="c-section container">
   <div class="mb-4">
     <img src="<?= get_option('top_ticket_image'); ?>" class="mx-auto" alt="">
@@ -327,11 +330,11 @@ $foods = get_posts($args);
     <h2>SPONSOR</h2>
     <div class="c-box bg-main-sub">
       <div class="flex flex-wrap justify-center items-center">
-        <?php foreach ($sponsors as $post) : setup_postdata($post); ?>
-          <div class="p-4 w-1/3 md:w-1/5">
+        <?php $i=0; foreach ($sponsors as $post) : setup_postdata($post); ?>
+          <div class="p-4 <?= $i == 0 ? 'w-full' : 'w-1/3 md:w-1/5' ; ?>">
             <a href="<?php the_field('external_link');?>" target="_blank"><img src="<?= get_the_post_thumbnail_url(); ?>" alt="" /></a>  
           </div>
-        <?php endforeach; wp_reset_postdata(); ?>
+        <?php $i++; endforeach; wp_reset_postdata(); ?>
       </div>
     </div>
   </div>

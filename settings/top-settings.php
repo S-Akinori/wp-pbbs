@@ -52,6 +52,10 @@ function top_settings_page()
           <td><textarea name="top_youtube" type="text" id="top_youtube" class="regular-text"><?php form_option('top_youtube'); ?></textarea></td>
         </tr>
         <tr>
+          <th scope="row"><label for="top_campaign_image">キャンペーン画像</label></th>
+          <td><?php generate_upload_image_tag('top_campaign_image', get_option('top_campaign_image')); ?></td>
+        </tr>
+        <tr>
           <th><label for="top_lineup_title">ラインナップ タイトル</label></th>
           <td colspan="2"><input name="top_lineup_title" type="text" id="top_lineup_title" value="<?php form_option('top_lineup_title'); ?>" class="regular-text" /></td>
         </tr>
@@ -241,6 +245,7 @@ function register_top_setting()
   register_setting('top_settings_group', 'top_title');
   register_setting('top_settings_group', 'top_text');
   register_setting('top_settings_group', 'top_youtube');
+  register_setting('top_settings_group', 'top_campaign_image');
   register_setting('top_settings_group', 'top_lineup_title');
   register_setting('top_settings_group', 'top_timetable_title');
   register_setting('top_settings_group', 'top_timetable_image_0');
