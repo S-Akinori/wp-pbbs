@@ -15,7 +15,7 @@
           会場：SUNSET BEACH PARK INAGE<br>
           入場：無料※ステージ前席 一部有料設定<br>
           主催：PERFECT BEER ROCK FES実行委員会<br>
-          企画・制作：株式会社Obsessed
+          制作：株式会社Obsessed
         </div>
         <div class="flex items-center justify-center ml-auto">
           <a href="" class="mr-4"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon-obsessed.png" width="40" alt=""></a>
